@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reporte</title>
+  </head>
+  <body>
+    <h1 style="text-align: center">Tokens</h1>
+    <table>
+      <thead>
+        <th>Nombre</th>
+        <th>Lexema</th>
+        <th>Fila</th>
+        <th>Columna</th>
+      </thead>
+      <tbody>
+        {% for tk in tokens %}
+        <tr>
+          <td>{{tk.name}}</td>
+          <td>{{tk.value}}</td>
+          <td>{{tk.row}}</td>
+          <td>{{tk.col}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <h1 style="text-align: center">Errores</h1>
+    <table>
+      <thead>
+        <th>Lexema</th>
+        <th>Fila</th>
+        <th>Columna</th>
+      </thead>
+      <tbody>
+        {% for e in errs %}
+        <tr>
+          <td>{{e.char}}</td>
+          <td>{{e.row}}</td>
+          <td>{{e.col}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
