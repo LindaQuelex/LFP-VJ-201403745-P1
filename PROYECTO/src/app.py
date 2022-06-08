@@ -16,8 +16,10 @@ if question1=='si':
         print('Archivo ',i,':',list_files[i])
     print('\n')
     archivoseleccionado= input('Ingrese correlativo del archivo: ')
-    print('El archivo a analizar es: ', list_files[int(archivoseleccionado)])    
-    file = open( './ENTRADAS/'+ list_files[int(archivoseleccionado)] , encoding='utf-8')
+
+    print('El archivo a analizar es: ', list_files[int(archivoseleccionado)]) 
+    filename=list_files[int(archivoseleccionado)]   
+    file = open( './ENTRADAS/'+ filename, encoding='utf-8')
     content = file.read()
     print('\n')
     print('Finalizó la carga de archivos','\n')
