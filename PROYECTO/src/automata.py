@@ -4,21 +4,81 @@ from utils.token import Token
 from typing import List
 
 
-# Tokens
 
+d=["0","1","2","3","4","5","6","7","8","9"]
+L=["Ñ","ñ","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+
+
+def AFDComentarioSimple(lexema):
+    pass
+
+def AFDComentarioVL(lexema):
+    pass
+
+def AFD_DatoTipoInt(lexema):
+    pass
+
+def AFD_Identificador(lexema):
+    pass
+
+def AFD_DatoTipoDouble(lexema):
+    pass 
+
+def  AFD_DatoTipoString(lexema):
+    pass
+
+
+def AFD_DatoTipoChar(lexema):
+    pass
+
+def AFD_DatoTipoBoolean(lexema):
+    pass 
+
+def AFD_Parametro(lexema):
+    pass
+
+# TOKENS DEFINIDOS
 tokens = {
-  "tk_reservada_inicio": "INICIO",
-  "tk_reservada_fin": "FIN",
-  "tk_operador_suma": "+",
-  "tk_operador_resta": "-",
-  "tk_operador_multiplicacion": "*",
-  "tk_operador_division": "/",
-  "tk_operador_resto": "%",
-  "tk_operador_igualacion": "==",
-  "tk_operador_asignacion": "=",
-  "tk_operador_resto": "%",
-#   "tk_numero_double": AFDNumeroDouble
-#   "tk_numero": AFDNumero
+  "tk_comentario_simple": AFDComentarioSimple,
+  "tk_comentario_var_lineas": AFDComentarioVL,
+  "tk_tipo_int": "int",
+  "tk_tipo_double": "double",
+  "tk_tipo_string": "string",
+  "tk_tipo_char": "char",
+  "tk_tipo_boolean": "boolean",
+  "tk_suma": "+",
+  "tk_resta": "-",
+  "tk_multiplicacion": "*",
+  "tk_division": "/",
+  "tk_resto": "%",
+  "tk_asignacion": "=",  #falta agregar al manual técnico
+  "tk_igualacion": "==",
+  "tk_diferenciacion": "!=",
+  "tk_mayor_que": ">",
+  "tk_mayor_o_igual_que": ">=",
+  "tk_menor_que": "<",
+  "tk_menor_o_igual_que": "<=",
+  "tk_and": "&&",
+  "tk_or": "||",
+  "tk_not": "!",
+  "tk_punto_coma": ";",
+  "tk_condicional": "if",
+  "tk_par_abierto": "(",
+  "tk_par_cerrado": ")",
+  "tk_dato_tipo_Int": AFD_DatoTipoInt,  #ESTA REPETIDO EL DATO INT EN EL MANUAL TÉCNICO
+  "tk_identificador": AFD_Identificador, 
+  "tk_llave_abierta":"{",
+  "tk_llave_cerrada":"}",
+  "tk_condicional_else":"else",
+  "tk_iterativo_while": "while",
+  "tk_iterativo_do": "do",
+  "tk_reservda_void": "void",
+  "tk_reservada_return": "return",
+  "tk_dato_double": AFD_DatoTipoDouble,
+  "tk_dato_string": AFD_DatoTipoString,
+  "tk_dato_char": AFD_DatoTipoChar,
+  "tk_dato_boolean": AFD_DatoTipoBoolean,
+  "tk_parametro": AFD_Parametro,
 }
 
 IGNORAR = " \n\t"
@@ -26,13 +86,7 @@ IGNORAR = " \n\t"
 
 
 
-
-
-digito=["0","1","2","3","4","5","6","7","8","9"]
-letra=["a","b","c","d","e","f","g","h","i","j"]
-
-
-
+#FALTA REVISAR PARA UTILIZAR ESTE CÓDIGO O LA REPO, HAY QUE CONSIDERAR LOS REPORTES
 def automata(input: str):
     # variables temporales
     lexema: str = ''

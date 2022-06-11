@@ -24,10 +24,13 @@ while contadorprocesos>=0:
             print('El archivo a analizar es: ', archivoseleccionado) 
             #filename=list_files[int(archivoseleccionado)]   
             file = open( './ENTRADAS/'+ archivoseleccionado, encoding='utf-8')
+            #CONVERTIR EL CONTENIDO A MINUSCULAS
             #INSERTAR MÉTODO ANALIZADOR LÉXICO
             content = file.read()
             print('\n')
             print('Finalizó la carga de archivos','\n')
+
+            #INGRESAR EL NOMBRE DEL ARCHIVO DE SALIDA
     except: 
         print('\n','-------------------------------------')
         print('El archivo no existe intente de nuevo')

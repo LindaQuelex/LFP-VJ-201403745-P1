@@ -4,35 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reporte</title>
+    <title>REPORTES P1LFP</title>
   </head>
   <body>
-    <h1 style="text-align: center">Tokens</h1>
+    
+<style>
+  table, th, td {
+    border:1px solid black;
+  }
+  </style>
+    <h1 style="text-align: center">REPORTES ANALIZADOR LÉXICO DE SIMPLE C</h1>
+    
+    <h2 style="text-align: center">REPORTE DE TOKENS</h2>
     <table>
       <thead>
-        <th>Nombre</th>
-        <th>Lexema</th>
-        <th>Fila</th>
+        <th>Línea</th>
         <th>Columna</th>
+        <th>Lexema</th>
+        <th>Token</th>
+        <th>Patrón</th>        
       </thead>
       <tbody>
         {% for tk in tokens %}
         <tr>
-          <td>{{tk.name}}</td>
-          <td>{{tk.value}}</td>
           <td>{{tk.row}}</td>
           <td>{{tk.col}}</td>
+          <td>{{tk.lexema}}</td>
+          <td>{{tk.token}}</td>
+          <td>{{tk.patron}}</td>
         </tr>
         {% endfor %}
       </tbody>
     </table>
 
-    <h1 style="text-align: center">Errores</h1>
+    <h2 style="text-align: center">REPORTE DE AUTOMÁTA FINITO DETERMINÍSTA -AFD- </h2>
     <table>
       <thead>
-        <th>Lexema</th>
-        <th>Fila</th>
-        <th>Columna</th>
+        <th>Estado</th>
+        <th>Caracter</th>
+        <th>Lexema reconocido</th>
+        <th>Siguiente estado</th>
       </thead>
       <tbody>
         {% for e in errs %}
@@ -40,6 +51,27 @@
           <td>{{e.char}}</td>
           <td>{{e.row}}</td>
           <td>{{e.col}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
+
+
+    <h2 style="text-align: center">REPORTE DE ERRORES</h2>
+    <table>
+      <thead>
+        <th>Línea</th>
+        <th>Columna</th>
+        <th>Lexema</th>
+      </thead>
+      <tbody>
+        {% for e in errs %}
+        <tr>
+          <td>{{e.row}}</td>
+          <td>{{e.col}}</td>
+          <td>{{e.char}}</td>
         </tr>
         {% endfor %}
       </tbody>
