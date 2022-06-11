@@ -8,14 +8,27 @@
 # Ejemplo de código fuente
 
 ```Simple C
+// comentario de una línea
+
+/*
+Comentario
+De varias
+Líneas
+*/
+
+Int _dato_int = 67;
+Double Dato_double  =39.87;
+String dato_String1= "Hola mundo";
+Char _Dato_tipo__Char1 = 'a';
+Boolean _ = true;
+Boolean B= True;
 ```
 
-
 # Lexemas
-- //
+- // comentario 1 línea sdri0werw023"#"#" 
 - /*línea 1 comentario
     línea 2 comentario"!"#
-    línea 3 comentario*****////
+    línea 3 comentario
    */
 - Int
 - Double
@@ -52,160 +65,95 @@
 - return
 
 
-
 # Definición de tokens
 
-| Token                 | Descripción                            | Patrón                           |
-| --------------------- | -------------------------------------- | -------------------------------- |
-| reservada_public      | Palabra reservada                      | public                           |
-| reservada_class       | Palabra reservada                      | class                            |
-| identificador         | Cualquier identificador del lenguaje   | (_\|[a-zA-Z])(_\|[a-zA-Z0-9])    |
-| llave_abierta         | Llave abierta                          | {                                |
-| llave_cerrada         | Llave cerrada                          | }                                |
-| reservada_private     | Palabra reservada                      | private                          |
-| reservada_final       | Palabra reservada                      | final                            |
-| tipo_int              | Tipo de dato entero                    | int                              |
-| operador_igual        | Operador de asignación                 | =                                |
-| Dato_int              | Dato tipo entero                       | ^\d+$                            |
-| punto_coma            | Punto y coma                           | ;                                |
-| reservada_static      | Palabra reservada                      | static                           |
-| reservada_void        | Palabra reservada                      | void                             |
-| parentesis_abierto    | Paréntesis abierto                     | (                                |
-| parentesis_cerrado    | Paréntesis cerrado                     | )                                |
-| tipo_string           | Tipo de dato String                    | String                           |
-| corchete_open         | Corchete abierto                       | [                                |
-| corchete_close        | Corchete cerrado                       | ]                                |
-| iterativo             | Ciclo while                            | While                            |
-| menor_que             | Operador menor que                     | <                                |
-| punto                 | Operador                               | .                                |
-| suma                  | Operador suma                          | +                                |
-| dato_String           | Dato tipo String                       | "([^"]\|(\"))*"                  |
-| aaaaaaaaaaaaaaaaaaa   | aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa | aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa |
-| comentario_simple     | Línea de comentario simple             | //                               |
-| comentario_var_líneas | Comentario de varias líneas            | /*                               |
-| tipo_Int              | Tipo de dato entero                    | (I                               | i)(N    | n)(T | t)   |
-| tipo_Double           | Tipo de dato decimal                   | (D                               | d)(O    | o)(U | u)(B | b)(L | l)(E | e)   |
-| tipo_String           | Tipo de dato String                    | (S                               | s)(T    | t)(R | r)(I | i)(N | n)(G | g)   |
-| tipo_Char             | Tipo de dato Char                      | (C                               | c)(H    | h)(A | a)(R | r)   |
-| tipo_Boolean          | Tipo de dato Boolean                   | (B                               | b)(O    | o)(O | o)(L | l)(E | e)(A | a)(N | n) |
-| suma                  | Operador suma                          | +                                |
-| resta                 | Operador resta                         | -                                |
-| multiplicacion        | Operador multiplicación                | *                                |
-| division              | Operador división                      | /                                |
-| resto                 | Operador resto                         | %                                |
-| igualacion            | Operador igualación                    | ==                               |
-| diferenciacion        | Operador diferenciación                | !=                               |
-| mayor_que             | Operador mayor que                     | >                                |
-| mayor_o_igual_que     | Operador mayor o igual que             | >=                               |
-| menor                 | Operador menor que                     | <                                |
-| menor_o_igual_que     | Operador menor o igual que             | <=                               |
-| and                   | Operador and                           | &&                               |
-| or                    | Operador or                            |                                  |         |      |
-| not                   | Operador not                           | !                                |
-| punto_coma            | Punto y coma                           | ;                                |
-| condicional           | Condicional                            | (I                               | i)(F    | f)   |
-| par_abierto           | Paréntesis abierto                     | (                                |
-| par_cerrado           | Paréntesis cerrado                     | )                                |
-| dato_tipo_Int         | Dato tipo Int                          | ^\d+$                            | revisar |
-| identificador         | Cualquier identificador del lenguaje   | (_\|[a-zA-Z])(_\|[a-zA-Z0-9])    | revisar |
-| llave_abierta         | Llave abierta                          | {                                |
-| llave_cerrada         | Llave cerrada                          | }                                |
-| condicional_else      | Condicional else                       | (E                               | e)(L    | l)(S | s)(E | e)   |
-| iterativo_while       | Iteración con ciclo while              | (W                               | w)(H    | h)(I | i)(L | l)(E | e)   |
-| iterativo_do          | Iteración con ciclo do while           | (D                               | d)(O    | o)   |
-| reservada_void        | Palabra reservada                      | void                             |
-| reservada_return      | Retorno                                | (R                               | r)(E    | e)(T | t)(U | u)(R | r)(N | n)   |
-| dato_int |
-| dato_double |
-| dato_string |
-| dato_char |
-| dato_boolean  |
+| Token                 | Descripción                          | Patrón              |
+| --------------------- | ------------------------------------ | ------------------- |
+| comentario_simple     | Línea de comentario simple           | ^\/\/.*\n           |
+| comentario_var_líneas | Comentario de varias líneas          | (\/\*(\s*|.*?)*\*\/)|(\/\/.*)  |
+| tipo_int              | Tipo de dato entero                  | int                 |
+| tipo_double           | Tipo de dato decimal                 | double              |
+| tipo_string           | Tipo de dato String                  | string              |
+| tipo_char             | Tipo de dato Char                    | char                |
+| tipo_boolean          | Tipo de dato boolean                 | boolean             |
+| suma                  | Operador suma                        | +                   |
+| resta                 | Operador resta                       | -                   |
+| multiplicacion        | Operador multiplicación              | *                   |
+| division              | Operador división                    | /                   |
+| resto                 | Operador resto                       | %                   |
+| igualacion            | Operador igualación                  | ==                  |
+| diferenciacion        | Operador diferenciación              | !=                  |
+| mayor_que             | Operador mayor que                   | >                   |
+| mayor_o_igual_que     | Operador mayor o igual que           | >=                  |
+| menor_que             | Operador menor que                   | <                   |
+| menor_o_igual_que     | Operador menor o igual que           | <=                  |
+| and                   | Operador and                         | &&                  |
+| or                    | Operador or                          | \|\|                |
+| not                   | Operador not                         | !                   |
+| punto_coma            | Punto y coma                         | ;                   |
+| condicional           | Condicional                          | if                  |
+| par_abierto           | Paréntesis abierto                   | (                   |
+| par_cerrado           | Paréntesis cerrado                   | )                   |
+| dato_tipo_Int         | Dato tipo Int                        | ^\d+$               |
+| identificador         | Cualquier identificador del lenguaje | _|[a-zA-Z]([a-zA-Z0-9]*)_*  |
+| llave_abierta         | Llave abierta                        | {                   |
+| llave_cerrada         | Llave cerrada                        | }                   |
+| condicional_else      | Condicional else                     | else                |
+| iterativo_while       | Iteración con ciclo while            | while               |
+| iterativo_do          | Iteración con ciclo do while         | do                  |
+| reservada_void        | Palabra reservada                    | void                |
+| reservada_return      | Retorno                              | return              |
+| dato_int              | Dato tipo entero                     | [0-9]+
+| dato_double           | Dato tipo double                     | [+-]?[0-9]+\.[0-9]+ |
+| dato_string           | Datos tipo String                    | "([^"]\|(\"))*.*"   |
+| dato_char             | Dato tipo char                       |                     | definir                  |
+| dato_boolean          | Dato tipo boolean                    | true|false          |
+| parametro             | Parámetro                            | \(.*\,\)\*          |
 
 
 
-- dato1_
-- _datos2
-- 
-- (parametro,)*
- 67;
-Double Dato_double  =39.87;
-String dato_String1= "Hola mundo";
 Char _Dato_tipo__Char1 = 'a';
-Boolean _ = true;
-Boolean B= True;
 
 
+# Análisis léxico
 
+| Lexema                                                        | Token                 |
+| ------------------------------------------------------------- | --------------------- |
+| // comentario 1 línea sdri0werw023"#"#"                       | comentario_simple     |
+| /*línea 1 comentario línea 2 comentario línea 3 comentario */ | comentario_var_líneas |
+| Int                                                           | tipo_int              |
+| Double                                                        | tipo_double           |
+| String                                                        | tipo_string           |
+| Char                                                          | tipo_char             |
+| Boolean                                                       | tipo_boolean          |
+| +                                                             | suma                  |
+| -                                                             | resta                 |
+| *                                                             | multiplicacion        |
+| /                                                             | division              |
+| %                                                             | resto                 |
+| ==                                                            | igualacion            |
+| !=                                                            | diferenciacion        |
+| >                                                             | mayor_que             |
+| >=                                                            | mayor_o_igual_que     |
+| <                                                             | menor_que             |
+| <=                                                            | menor_o_igual_que     |
+| &&                                                            | and                   |
+| \/\/                                                          | or                    |
+| !                                                             | not                   |
+| ;                                                             | punto_coma            |
+| if                                                            | condicional           |
+| (                                                             | par_abierto           |
+| dato1_                                                        | identificador         |
+| _datos2                                                       | identificador         |
+| )                                                             | par_cerrado           |
+| {                                                             | llave_abierta         |
+| }                                                             | llave_cerrada         |
+| else                                                          | condicional_else      |
+| while                                                         | iterativo_while       |
+| do                                                            | iterativo_do          |
+| void                                                          | reservada_void        |
+| (parametro,)*                                                 | parametro             |
+| return                                                        | reservada_return      |
 
+# Conversión de expresión regular a AFD a través del método del árbol 
 
-
-
-
-
-
-
-
-
-
-
-
-# Análisis léxico tarea
-
-| Lexema             | Token              |
-| ------------------ | ------------------ |
-| public             | reservada_public   |
-| class              | reservada_class    |
-| Tarea2             | identificador      |
-| {                  | llave_abierta      |
-| private            | reservada_private  |
-| final              | reservada_final    |
-| int                | tipo_int           |
-| REPETICIONES       | identificador      |
-| =                  | operador_igual     |
-| 5                  | Dato_int           |
-| ;                  | punto_coma         |
-| public             | reservada_public   |
-| static             | reservada_static   |
-| void               | reservada_void     |
-| main               | identificador      |
-| (                  | parentesis_abierto |
-| String             | tipo_string        |
-| [                  | corchete_open      |
-| ]                  | corchete_close     |
-| args               | identificador      |
-| )                  | parentesis_cerrado |
-| {                  | llave_abierta      |
-| int                | tipo_int           |
-| i                  | identificador      |
-| =                  | operador_igual     |
-| 0                  | Dato_int           |
-| ;                  | punto_coma         |
-| while              | iterativo          |
-| (                  | parentesis_abierto |
-| i                  | identificador      |
-| <                  | menor_que          |
-| REPETICIONES       | identificador      |
-| )                  | parentesis_cerrado |
-| {                  | llave_abierta      |
-| System             | identificador      |
-| .                  | punto              |
-| out                | identificador      |
-| .                  | punto              |
-| println            | identificador      |
-| (                  | llave_abierta      |
-| " Repetición NO. " | dato_String        |
-| +                  | suma               |
-| (                  | llave_abierta      |
-| i                  | identificador      |
-| +                  | suma               |
-| 1                  | Dato_int           |
-| )                  | parentesis_cerrado |
-| )                  | parentesis_cerrado |
-| ;                  | punto_coma         |
-| i                  | identificador      |
-| +                  | suma               |
-| +                  | suma               |
-| ;                  | punto_coma         |
-| }                  | llave_cerrada      |
-| }                  | llave_cerrada      |
-| }                  | llave_cerrada      |

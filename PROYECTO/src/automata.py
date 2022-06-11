@@ -4,6 +4,35 @@ from utils.token import Token
 from typing import List
 
 
+# Tokens
+
+tokens = {
+  "tk_reservada_inicio": "INICIO",
+  "tk_reservada_fin": "FIN",
+  "tk_operador_suma": "+",
+  "tk_operador_resta": "-",
+  "tk_operador_multiplicacion": "*",
+  "tk_operador_division": "/",
+  "tk_operador_resto": "%",
+  "tk_operador_igualacion": "==",
+  "tk_operador_asignacion": "=",
+  "tk_operador_resto": "%",
+#   "tk_numero_double": AFDNumeroDouble
+#   "tk_numero": AFDNumero
+}
+
+IGNORAR = " \n\t"
+
+
+
+
+
+
+digito=["0","1","2","3","4","5","6","7","8","9"]
+letra=["a","b","c","d","e","f","g","h","i","j"]
+
+
+
 def automata(input: str):
     # variables temporales
     lexema: str = ''
