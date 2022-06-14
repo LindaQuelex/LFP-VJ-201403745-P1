@@ -1,4 +1,3 @@
-
 from errors import Errors
 from token1 import Token1
 from estados import Estados
@@ -15,7 +14,7 @@ class Lexico:
         self.comillasimple=["'"]
         self.d = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
         self.letra = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m","n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-
+        self.salto= '\n'
 
         self.tokens = {
         "tk_parametro": self.AFD_Parametro,
@@ -107,7 +106,9 @@ class Lexico:
 
         self.i = " \n\t"
 
-    def AFDComentarioSimple(self,lexema):  #no funciona en el analizador
+    #MATCH ENTRE LOS DICCIONARIOS PARA LOS PATRONES
+
+    def AFDComentarioSimple(self,lexema):  
         estado=0
         estados_aceptacion = [2]
         reconocido: str = ''
@@ -321,7 +322,7 @@ class Lexico:
                 else:
                     siguiente = posicion + 1
                     anterior = False
-                    while siguiente <= len(entrada) and entrada[siguiente - 1] != '\n' :
+                    while siguiente <= len(entrada) and entrada[siguiente - 1] != self.salto :
                         lexema = entrada[posicion : siguiente]
                         estado_encontrado = patron(lexema)
                         if not estado_encontrado and anterior:
@@ -334,7 +335,7 @@ class Lexico:
                     if estado_encontrado:
                         datos_token = Token1(fila,columna, lexema, token, lexema)
                         self.list_tokens.append(datos_token)
-                        print(f"estado_encontrado: '{lexema}' | {token} - AFD")
+                        #print(f"estado_encontrado: '{lexema}' | {token} - AFD")
                         columna += siguiente - posicion + 1
                         posicion = siguiente - 1
                 if estado_encontrado: break
@@ -345,7 +346,6 @@ class Lexico:
                 print(datos_error.row, datos_error.col, datos_error.lexema)
                 print("ERROR LEXICO")
         dt = {'tokens':self.list_tokens,'errores':self.list_errors}
-       
         return dt
 
 

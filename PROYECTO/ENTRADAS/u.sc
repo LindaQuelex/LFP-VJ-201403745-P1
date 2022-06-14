@@ -1,11 +1,5 @@
-// cefasg
-
-12
-1.2
+_cefasg
 $
-
-"ho la"
-
-
+12
+&
 /
-'hdssfs'

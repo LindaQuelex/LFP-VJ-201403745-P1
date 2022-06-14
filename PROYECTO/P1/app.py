@@ -2,10 +2,10 @@ from os import startfile
 import os
 from analizador_léxico import Lexico
 from crearhtml import  createHTML
+from analizador import *
 
 
 report_html=createHTML
-
 print('\n','---------------------------------------------------', 'ANALIZADOR LÉXICO PARA SIMPLE C ','---------------------------------------------------')
 print('MENÚ PRINCIPAL','\n')
 contadorprocesos=0
@@ -31,17 +31,16 @@ while contadorprocesos>=0:
             print('\n')
             print('Finalizó la carga de archivos','\n')
             # ENVIAR CONTENIDO AL ANALIZADOR LÉXICO
-            a=Lexico()
-            contenido = a.analizador(content2)
-
-            #GENERAR REPORTE
+            # a=Lexico()
+            # contenido = a.analizador(content2)
+            b=Lexico2()
+            contenido=b.analizador(content2)
+            # #GENERAR REPORTE
             report_html=createHTML(contenido)
-
     except: 
         print('\n','-------------------------------------')
         print('El archivo no existe intente de nuevo')
         print('\n','-------------------------------------')
-
     print('\n')
     salir=input('¿Desea intentar de nuevo?' +'\n'+'Responda: si o no'+'\n')
     if salir=='si':
@@ -52,4 +51,3 @@ while contadorprocesos>=0:
             exit()
         else: 
             contadorprocesos+=1
-            
