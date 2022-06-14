@@ -1,20 +1,22 @@
 from os import startfile
 import os
-from jinja2 import Environment, FileSystemLoader, select_autoescape
-from automata import automata
+from analizador_léxico import Lexico
+from crearhtml import  createHTML
 
 
+report_html=createHTML
 
 print('\n','---------------------------------------------------', 'ANALIZADOR LÉXICO PARA SIMPLE C ','---------------------------------------------------')
 print('MENÚ PRINCIPAL','\n')
 contadorprocesos=0
 while contadorprocesos>=0:
+    print('\n')
     question1=input('¿Desea iniciar el análisis léxico?'+'\n'+'Responda: si o no'+'\n')
     print('\n')
     try:
         if question1=='si': 
             #SELECCIÓN DE ARCHIVOS
-            list_files= os.listdir('C:/Users/Linda Quelex/Desktop/UNIVERSIDAD 2022/(3.1) LAB LFP/PROYECTOS/taller-lfp-main/ENTRADAS')
+            list_files= os.listdir('C:/Users/Linda Quelex/Desktop/UNIVERSIDAD 2022/(3.1) LAB LFP/PROYECTOS/PROYECTO1/LFP-VJ-201403745-P1/PROYECTO/ENTRADAS')
             print('\n')
             print('Archivos disponibles: ')
             for i in range(len(list_files)):
@@ -24,32 +26,17 @@ while contadorprocesos>=0:
             print('El archivo a analizar es: ', archivoseleccionado) 
             #filename=list_files[int(archivoseleccionado)]   
             file = open( './ENTRADAS/'+ archivoseleccionado, encoding='utf-8')
-            #CONVERTIR EL CONTENIDO A MINUSCULAS
-
             content = file.read()
+            content2=content.lower()
             print('\n')
             print('Finalizó la carga de archivos','\n')
-      
-            #INSERTAR MÉTODO ANALIZADOR LÉXICO
+            # ENVIAR CONTENIDO AL ANALIZADOR LÉXICO
+            a=Lexico()
+            contenido = a.analizador(content2)
 
-            # funcionamiento del analizador léxico
-            # tokens, errs = automata(content)
-            
+            #GENERAR REPORTE
+            report_html=createHTML(contenido)
 
-            
-            # # REPORTES  
-            # env = Environment(loader=FileSystemLoader('src/templates'), autoescape=select_autoescape(['html']))
-            # file_exit=input('Ingrese el nombre del archivo de salida: ','\n')
-            # template = env.get_template('symbol_table.html')
-            # html_file = open('output.html', 'w+', encoding='utf-8')
-            # html_file.write(template.render(tokens=tokens, errs=errs))
-            # html_file.close()
-
-            # startfile('output.html')
-
-
-
-            #INGRESAR EL NOMBRE DEL ARCHIVO DE SALIDA
     except: 
         print('\n','-------------------------------------')
         print('El archivo no existe intente de nuevo')
@@ -65,28 +52,4 @@ while contadorprocesos>=0:
             exit()
         else: 
             contadorprocesos+=1
-
-
-
-
-
-
-
-
-
-
-
-
-
-# PRUEBA SIN USAR JINJA
-# f = open('holamundo.html','w')
-
-
-# titulo="hola"
-# mensaje = f"""<html>
-# <head></head>
-# <body><p>{titulo}</p></body>
-# </html>"""
-
-# f.write(mensaje)
-# f.close()
+            

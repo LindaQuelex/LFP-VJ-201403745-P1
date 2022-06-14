@@ -1,6 +1,6 @@
 import re
-from utils.errors import Errors
-from utils.token import Token
+from errors import Errors
+from token import Token
 from typing import List
 
 
@@ -164,7 +164,7 @@ def automata(input: str):
                 state = 1
                 lexema = ''
         elif state == 3:
-            tokens.append(Token('str', lexema, row, col))
+            tokens.append(Token('str', lexema, row, col,"tokenk"))
             lexema = ''
             state = 1
         elif state == 4:
@@ -178,7 +178,7 @@ def automata(input: str):
                 lexema += char
                 col += 1
             else:
-                tokens.append(Token('int', lexema, row, col))
+                tokens.append(Token('int', lexema, row, col, "tokenk"))
                 lexema = ''
                 state = 1
         elif state == 5:
@@ -187,7 +187,7 @@ def automata(input: str):
                 lexema += char
                 col += 1
             else:
-                tokens.append(Token('id', lexema, row, col))
+                tokens.append(Token('id', lexema, row, col, "tokenk"))
                 lexema = ''
                 state = 1
         elif state == 6:
@@ -209,11 +209,11 @@ def automata(input: str):
                 lexema += char
                 col += 1
             else:
-                tokens.append(Token('double', lexema, row, col))
+                tokens.append(Token('double', lexema, row, col,"tokenk"))
                 lexema = ''
                 state = 1
         elif state == 8:
-            tokens.append(Token('equals', lexema, row, col))
+            tokens.append(Token('equals', lexema, row, col,"tokenk"))
             lexema = ''
             state = 1
 

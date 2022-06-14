@@ -1,11 +1,9 @@
 // comentario de una línea
-
 /*
 Comentario
 De varias
 Líneas
 */
-
 Int _dato_int = 67;
 Double Dato_double  =39.87;
 String dato_String1= "Hola mundo";
@@ -30,49 +28,17 @@ OR || true || false
 NOT ! ! false
 
 
-if (dato1_== _datos2){
-
-
-}
-
-if (dato1_== _datos2){
-
-
-}
-
-else{
-
-}
-
-
-while(operación==1){
-
-
-}
-
-do{
-
-}
-
-while{
-
-}
-
-
+if (dato1_== _datos2){}
+if (dato1_== _datos2){}
+else{}
+while(operación==1){}
+do{}
+while{}
 void prueba_metodo (parametro){
-
-
 }
-
-
 String _nuevoString() {
-
 } 
-
-
-
 (_nombre_parametro,)*
-
 return
 
 
