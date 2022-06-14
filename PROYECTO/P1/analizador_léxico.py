@@ -313,7 +313,7 @@ class Lexico:
                         #print(datos_token.row, datos_token.col, datos_token.lexema, datos_token.token)
                         self.list_tokens.append(datos_token)
                         
-                else: # AFD
+                else:
                 
                     siguiente = posicion + 1
                     anterior_estado_encontrado = False
