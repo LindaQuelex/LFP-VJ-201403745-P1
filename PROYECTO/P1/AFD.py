@@ -8,9 +8,9 @@ class Automatas:
         self.g_bajo =['_']
         self.comillasimple=["'"]
         self.d = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-        self.l = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m","n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+        self.l = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m","n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z","á","é","í","ó","ú"]
         self.salto= '\n'
-     
+
     
     def AFDComentarioSimple(self,lexema):  
         estado=0
@@ -105,8 +105,8 @@ class Automatas:
                     reconocido+=caracter
                 elif caracter =='.':
                     estado=2                  
-                else:
-                    return False
+                # else:
+                #     return False
             elif estado==1:
                 if caracter =='.':
                     estado=2
@@ -114,14 +114,14 @@ class Automatas:
                 elif caracter in self.d:
                     estado=1
                     reconocido+=caracter
-                else:
-                    return False
+                # else:
+                #     return False
             elif estado==2:
                 if caracter in self.d:
                     estado=2
                     reconocido+=caracter
-                else:
-                    return False
+                # else:
+                #     return False
         return estado in estados_aceptacion
 
     def  AFD_DatoTipoString(self, lexema):
@@ -131,7 +131,7 @@ class Automatas:
         reconocido: str = ''
         for caracter in lexema:
             if estado==0:
-                if caracter == '"':
+                if caracter == '\"':
                     estado=1
                     reconocido+=caracter
                 else:

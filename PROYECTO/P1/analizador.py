@@ -19,7 +19,7 @@ class Lexico2:
         self.g_bajo =['_']
         self.comillasimple=["'"]
         self.d = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-        self.letra = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m","n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+        self.letra = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m","n", "ñ", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z","á","é","í","ó","ú"]
         self.salto= '\n'
 
         self.tokens = {
@@ -110,7 +110,6 @@ class Lexico2:
                         # print(expresion["er"])
                         datos_token = Token1(fila,columna, lexema, token, expresion2['er'])
                         self.list_tokens.append(datos_token)
-                        #print(f"estado_encontrado: '{lexema}' | {token} - AFD")
                         columna += siguiente - posicion + 1
                         posicion = siguiente - 1
                 if estado_encontrado: break
@@ -119,6 +118,5 @@ class Lexico2:
                 datos_error = Errors(fila,columna, lexema)
                 self.list_errors.append(datos_error)
                 print(datos_error.row, datos_error.col, datos_error.lexema)
-                print("ERROR LEXICO")
         dt = {'tokens':self.list_tokens,'errores':self.list_errors}
         return dt
