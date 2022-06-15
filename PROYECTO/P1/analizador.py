@@ -1,4 +1,5 @@
 
+from operator import truediv
 from errors import Errors
 from token1 import Token1
 from estados import Estados
@@ -97,6 +98,11 @@ class Lexico2:
                     while siguiente <= len(entrada) and entrada[siguiente - 1] != self.salto :
                         lexema = entrada[posicion : siguiente]
                         estado_encontrado = patron(lexema)
+                        #print(estado_encontrado)
+                        if estado_encontrado!=False:
+                            self.list_estados.append(estado_encontrado[1])
+                            print('hola',self.list_estados)
+
                         if not estado_encontrado and anterior:
                             lexema = entrada[posicion : siguiente - 1]
                             estado_encontrado = True
@@ -110,6 +116,11 @@ class Lexico2:
                         # print(expresion["er"])
                         datos_token = Token1(fila,columna, lexema, token, expresion2['er'])
                         self.list_tokens.append(datos_token)
+                        # estados=Estados("estado","caracter","lexema","siguiente estado")                   
+                        # estados3=patron(lexema) 
+                        # print('este es el estado 3', estados3[1])                
+                        # self.list_estados.append(estados3[1])
+
                         columna += siguiente - posicion + 1
                         posicion = siguiente - 1
                 if estado_encontrado: break
@@ -118,5 +129,9 @@ class Lexico2:
                 datos_error = Errors(fila,columna, lexema)
                 self.list_errors.append(datos_error)
                 print(datos_error.row, datos_error.col, datos_error.lexema)
-        dt = {'tokens':self.list_tokens,'errores':self.list_errors}
+        dt = {
+        'tokens':self.list_tokens,
+        'errores':self.list_errors,
+        'estados':self.list_estados
+        }
         return dt

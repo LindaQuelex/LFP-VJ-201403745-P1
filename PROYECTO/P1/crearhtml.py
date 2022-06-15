@@ -108,14 +108,14 @@ def createHTML(contenido):
     """
     	
     # ? Contenido BODY HTML
-    tokens = contenido["tokens"]
+    tokens = contenido["estados"]
 
     for dato in tokens:
         body = body + f"""      <tr >
-                                    <td> ingresar </td>
-                                    <td> ingresar </td>
-                                    <td> ingresar </td>
-                                    <td> ingresar </td>
+                                    <td> {dato.estado} </td>
+                                    <td> {dato.caracter}</td>
+                                    <td> {dato.lexema_reconocido} </td>
+                                    <td> {dato.sig_estado} </td>
 
                                 </tr>"""
 

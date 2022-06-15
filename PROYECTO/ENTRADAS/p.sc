@@ -1,3 +1,3 @@
-  39.87 ;
-  1.2
-  .25
+//comentario simple
+12
+*
