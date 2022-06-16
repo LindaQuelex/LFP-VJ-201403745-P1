@@ -1,3 +1,1 @@
-//comentario simple
-12
-*
+'d'

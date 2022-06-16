@@ -1,5 +1,4 @@
 
-from operator import truediv
 from errors import Errors
 from token1 import Token1
 from estados import Estados
@@ -83,8 +82,10 @@ class Lexico2:
             for token, patron in self.tokens.items():
                 if isinstance(patron, str):
                     if posicion + len(patron) > len(entrada): 
-                        print('')
+                        continue
+
                     lexema = entrada[posicion : posicion + len(patron)]
+
                     if lexema == patron:
                         estado_encontrado = True
                         posicion += len(patron)
@@ -98,10 +99,15 @@ class Lexico2:
                     while siguiente <= len(entrada) and entrada[siguiente - 1] != self.salto :
                         lexema = entrada[posicion : siguiente]
                         estado_encontrado = patron(lexema)
+                        aceptacion=estado_encontrado
+                        #print(aceptacion)
                         #print(estado_encontrado)
-                        if estado_encontrado!=False:
-                            self.list_estados.append(estado_encontrado[1])
-                            print('hola',self.list_estados)
+
+                        # ! Error 
+                        # if estado_encontrado!=False:
+                            
+                        #     self.list_estados.append(estado_encontrado[1])
+                        #     print('hola',self.list_estados)
 
                         if not estado_encontrado and anterior:
                             lexema = entrada[posicion : siguiente - 1]
@@ -110,11 +116,13 @@ class Lexico2:
                             break
                         anterior = estado_encontrado
                         siguiente += 1
+
                     if estado_encontrado:
                         #expresion=self.ExpresionesRegulares(token,patron)
-                        expresion2=exp_R.ExpresionesRegulares(token,patron)
+                        expresion2=exp_R.ExpresionesRegulares(token)
                         # print(expresion["er"])
                         datos_token = Token1(fila,columna, lexema, token, expresion2['er'])
+
                         self.list_tokens.append(datos_token)
                         # estados=Estados("estado","caracter","lexema","siguiente estado")                   
                         # estados3=patron(lexema) 
@@ -123,12 +131,14 @@ class Lexico2:
 
                         columna += siguiente - posicion + 1
                         posicion = siguiente - 1
+
                 if estado_encontrado: break
+
             if not estado_encontrado:
                 posicion += 1
                 datos_error = Errors(fila,columna, lexema)
                 self.list_errors.append(datos_error)
-                print(datos_error.row, datos_error.col, datos_error.lexema)
+               # print(datos_error.row, datos_error.col, datos_error.lexema)
         dt = {
         'tokens':self.list_tokens,
         'errores':self.list_errors,

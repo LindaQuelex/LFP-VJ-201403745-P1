@@ -2,7 +2,7 @@ from os import startfile
 
 
 def createHTML(contenido):
-    file_exit = input('Ingrese el nombre del archivo de salida: ')
+    file_exit = input('----->Ingrese el nombre del archivo de salida: ')
     print('\n')
     file = open('P1/tabla_tokens/table-03/{}.html'.format(file_exit),
                 'w+', encoding='utf-8')
@@ -112,10 +112,10 @@ def createHTML(contenido):
 
     for dato in tokens:
         body = body + f"""      <tr >
-                                    <td> {dato.estado} </td>
+                                    <td> S{dato.estado} </td>
                                     <td> {dato.caracter}</td>
                                     <td> {dato.lexema_reconocido} </td>
-                                    <td> {dato.sig_estado} </td>
+                                    <td> S{dato.sig_estado} </td>
 
                                 </tr>"""
 

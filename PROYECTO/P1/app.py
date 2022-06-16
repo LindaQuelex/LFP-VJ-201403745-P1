@@ -13,6 +13,7 @@ while contadorprocesos>=0:
     print('\n')
     question1=input('¿Desea iniciar el análisis léxico?'+'\n'+'Responda: si o no'+'\n')
     print('\n')
+    print('***************************************************')
     try:
         if question1=='si': 
             #SELECCIÓN DE ARCHIVOS
@@ -22,14 +23,19 @@ while contadorprocesos>=0:
             for i in range(len(list_files)):
                 print('Archivo ',i,':',list_files[i])
             print('\n')
-            archivoseleccionado= input('Ingrese el nombre del archivo: ')
+            print('***************************************************')
+            archivoseleccionado= input('----->Ingrese el nombre del archivo: ')
+            print('\n')
+            print('***************************************************')
             print('El archivo a analizar es: ', archivoseleccionado) 
             #filename=list_files[int(archivoseleccionado)]   
             file = open( './ENTRADAS/'+ archivoseleccionado, encoding='utf-8')
             content = file.read()
             content2=content.lower()
             print('\n')
+            print('***************************************************')
             print('Finalizó la carga de archivos','\n')
+            print('***************************************************')
             # ENVIAR CONTENIDO AL ANALIZADOR LÉXICO
             # a=Lexico()
             # contenido = a.analizador(content2)
