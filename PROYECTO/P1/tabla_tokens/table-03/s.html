@@ -38,9 +38,837 @@
           <tr >
                                     <td>1</td>
                                     <td>1</td>
-                                    <td>'d'</td>
-                                    <td>tk_dato_char</td>
-                                    <td>'.*'</td>
+                                    <td>include</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>1</td>
+                                    <td>4</td>
+                                    <td><</td>
+                                    <td>tk_menor_que</td>
+                                    <td><</td>
+                                </tr>      <tr >
+                                    <td>1</td>
+                                    <td>4</td>
+                                    <td>stdio</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>1</td>
+                                    <td>6</td>
+                                    <td>h</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>1</td>
+                                    <td>9</td>
+                                    <td>></td>
+                                    <td>tk_mayor_que</td>
+                                    <td>></td>
+                                </tr>      <tr >
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>int</td>
+                                    <td>tk_tipo_int</td>
+                                    <td>int</td>
+                                </tr>      <tr >
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>sum</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>;</td>
+                                    <td>tk_punto_coma</td>
+                                    <td>;</td>
+                                </tr>      <tr >
+                                    <td>2</td>
+                                    <td>7</td>
+                                    <td>/* variable global, accesible desde cualquier parte */</td>
+                                    <td>tk_comentario_var_filas</td>
+                                    <td>\/\*.*\*\/</td>
+                                </tr>      <tr >
+                                    <td>3</td>
+                                    <td>1</td>
+                                    <td>/* del programa*/</td>
+                                    <td>tk_comentario_var_filas</td>
+                                    <td>\/\*.*\*\/</td>
+                                </tr>      <tr >
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>void</td>
+                                    <td>tk_reservda_void</td>
+                                    <td>void</td>
+                                </tr>      <tr >
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>suma</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>4</td>
+                                    <td>8</td>
+                                    <td>(</td>
+                                    <td>tk_par_abierto</td>
+                                    <td>(</td>
+                                </tr>      <tr >
+                                    <td>4</td>
+                                    <td>11</td>
+                                    <td>int</td>
+                                    <td>tk_tipo_int</td>
+                                    <td>int</td>
+                                </tr>      <tr >
+                                    <td>4</td>
+                                    <td>11</td>
+                                    <td>x</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>4</td>
+                                    <td>14</td>
+                                    <td>)</td>
+                                    <td>tk_par_cerrado</td>
+                                    <td>)</td>
+                                </tr>      <tr >
+                                    <td>4</td>
+                                    <td>14</td>
+                                    <td>/* variable local declarada como parámetro, */</td>
+                                    <td>tk_comentario_var_filas</td>
+                                    <td>\/\*.*\*\/</td>
+                                </tr>      <tr >
+                                    <td>5</td>
+                                    <td>1</td>
+                                    <td>/* accesible solo por la función suma*/</td>
+                                    <td>tk_comentario_var_filas</td>
+                                    <td>\/\*.*\*\/</td>
+                                </tr>      <tr >
+                                    <td>6</td>
+                                    <td>2</td>
+                                    <td>{</td>
+                                    <td>tk_llave_abierta</td>
+                                    <td>{</td>
+                                </tr>      <tr >
+                                    <td>7</td>
+                                    <td>1</td>
+                                    <td>sum</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>7</td>
+                                    <td>4</td>
+                                    <td>=</td>
+                                    <td>tk_asignacion</td>
+                                    <td>=</td>
+                                </tr>      <tr >
+                                    <td>7</td>
+                                    <td>4</td>
+                                    <td>sum</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>7</td>
+                                    <td>7</td>
+                                    <td>+</td>
+                                    <td>tk_suma</td>
+                                    <td>+</td>
+                                </tr>      <tr >
+                                    <td>7</td>
+                                    <td>7</td>
+                                    <td>x</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>7</td>
+                                    <td>10</td>
+                                    <td>;</td>
+                                    <td>tk_punto_coma</td>
+                                    <td>;</td>
+                                </tr>      <tr >
+                                    <td>8</td>
+                                    <td>7</td>
+                                    <td>return</td>
+                                    <td>tk_reservada_return</td>
+                                    <td>return</td>
+                                </tr>      <tr >
+                                    <td>8</td>
+                                    <td>8</td>
+                                    <td>;</td>
+                                    <td>tk_punto_coma</td>
+                                    <td>;</td>
+                                </tr>      <tr >
+                                    <td>9</td>
+                                    <td>2</td>
+                                    <td>}</td>
+                                    <td>tk_llave_cerrada</td>
+                                    <td>}</td>
+                                </tr>      <tr >
+                                    <td>10</td>
+                                    <td>5</td>
+                                    <td>void</td>
+                                    <td>tk_reservda_void</td>
+                                    <td>void</td>
+                                </tr>      <tr >
+                                    <td>10</td>
+                                    <td>8</td>
+                                    <td>int</td>
+                                    <td>tk_tipo_int</td>
+                                    <td>int</td>
+                                </tr>      <tr >
+                                    <td>10</td>
+                                    <td>8</td>
+                                    <td>ercambio</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>10</td>
+                                    <td>11</td>
+                                    <td>(</td>
+                                    <td>tk_par_abierto</td>
+                                    <td>(</td>
+                                </tr>      <tr >
+                                    <td>10</td>
+                                    <td>14</td>
+                                    <td>int</td>
+                                    <td>tk_tipo_int</td>
+                                    <td>int</td>
+                                </tr>      <tr >
+                                    <td>10</td>
+                                    <td>15</td>
+                                    <td>*</td>
+                                    <td>tk_multiplicacion</td>
+                                    <td>*</td>
+                                </tr>      <tr >
+                                    <td>10</td>
+                                    <td>15</td>
+                                    <td>a</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>10</td>
+                                    <td>20</td>
+                                    <td>int</td>
+                                    <td>tk_tipo_int</td>
+                                    <td>int</td>
+                                </tr>      <tr >
+                                    <td>10</td>
+                                    <td>21</td>
+                                    <td>*</td>
+                                    <td>tk_multiplicacion</td>
+                                    <td>*</td>
+                                </tr>      <tr >
+                                    <td>10</td>
+                                    <td>21</td>
+                                    <td>b</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>10</td>
+                                    <td>24</td>
+                                    <td>)</td>
+                                    <td>tk_par_cerrado</td>
+                                    <td>)</td>
+                                </tr>      <tr >
+                                    <td>11</td>
+                                    <td>2</td>
+                                    <td>{</td>
+                                    <td>tk_llave_abierta</td>
+                                    <td>{</td>
+                                </tr>      <tr >
+                                    <td>12</td>
+                                    <td>3</td>
+                                    <td>if</td>
+                                    <td>tk_condicional</td>
+                                    <td>if</td>
+                                </tr>      <tr >
+                                    <td>12</td>
+                                    <td>4</td>
+                                    <td>(</td>
+                                    <td>tk_par_abierto</td>
+                                    <td>(</td>
+                                </tr>      <tr >
+                                    <td>12</td>
+                                    <td>5</td>
+                                    <td>*</td>
+                                    <td>tk_multiplicacion</td>
+                                    <td>*</td>
+                                </tr>      <tr >
+                                    <td>12</td>
+                                    <td>5</td>
+                                    <td>a</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>12</td>
+                                    <td>8</td>
+                                    <td>></td>
+                                    <td>tk_mayor_que</td>
+                                    <td>></td>
+                                </tr>      <tr >
+                                    <td>12</td>
+                                    <td>9</td>
+                                    <td>*</td>
+                                    <td>tk_multiplicacion</td>
+                                    <td>*</td>
+                                </tr>      <tr >
+                                    <td>12</td>
+                                    <td>9</td>
+                                    <td>b</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>12</td>
+                                    <td>12</td>
+                                    <td>)</td>
+                                    <td>tk_par_cerrado</td>
+                                    <td>)</td>
+                                </tr>      <tr >
+                                    <td>13</td>
+                                    <td>2</td>
+                                    <td>{</td>
+                                    <td>tk_llave_abierta</td>
+                                    <td>{</td>
+                                </tr>      <tr >
+                                    <td>14</td>
+                                    <td>4</td>
+                                    <td>int</td>
+                                    <td>tk_tipo_int</td>
+                                    <td>int</td>
+                                </tr>      <tr >
+                                    <td>14</td>
+                                    <td>7</td>
+                                    <td>int</td>
+                                    <td>tk_tipo_int</td>
+                                    <td>int</td>
+                                </tr>      <tr >
+                                    <td>14</td>
+                                    <td>7</td>
+                                    <td>er</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>14</td>
+                                    <td>10</td>
+                                    <td>;</td>
+                                    <td>tk_punto_coma</td>
+                                    <td>;</td>
+                                </tr>      <tr >
+                                    <td>14</td>
+                                    <td>10</td>
+                                    <td>/* variable local, accesible solo dentro del */</td>
+                                    <td>tk_comentario_var_filas</td>
+                                    <td>\/\*.*\*\/</td>
+                                </tr>      <tr >
+                                    <td>15</td>
+                                    <td>1</td>
+                                    <td>/* bloque donde se declara*/</td>
+                                    <td>tk_comentario_var_filas</td>
+                                    <td>\/\*.*\*\/</td>
+                                </tr>      <tr >
+                                    <td>16</td>
+                                    <td>4</td>
+                                    <td>int</td>
+                                    <td>tk_tipo_int</td>
+                                    <td>int</td>
+                                </tr>      <tr >
+                                    <td>16</td>
+                                    <td>4</td>
+                                    <td>er</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>16</td>
+                                    <td>7</td>
+                                    <td>=</td>
+                                    <td>tk_asignacion</td>
+                                    <td>=</td>
+                                </tr>      <tr >
+                                    <td>16</td>
+                                    <td>8</td>
+                                    <td>*</td>
+                                    <td>tk_multiplicacion</td>
+                                    <td>*</td>
+                                </tr>      <tr >
+                                    <td>16</td>
+                                    <td>8</td>
+                                    <td>a</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>16</td>
+                                    <td>11</td>
+                                    <td>;</td>
+                                    <td>tk_punto_coma</td>
+                                    <td>;</td>
+                                </tr>      <tr >
+                                    <td>17</td>
+                                    <td>2</td>
+                                    <td>*</td>
+                                    <td>tk_multiplicacion</td>
+                                    <td>*</td>
+                                </tr>      <tr >
+                                    <td>17</td>
+                                    <td>2</td>
+                                    <td>a</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>17</td>
+                                    <td>5</td>
+                                    <td>=</td>
+                                    <td>tk_asignacion</td>
+                                    <td>=</td>
+                                </tr>      <tr >
+                                    <td>17</td>
+                                    <td>6</td>
+                                    <td>*</td>
+                                    <td>tk_multiplicacion</td>
+                                    <td>*</td>
+                                </tr>      <tr >
+                                    <td>17</td>
+                                    <td>6</td>
+                                    <td>b</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>17</td>
+                                    <td>9</td>
+                                    <td>;</td>
+                                    <td>tk_punto_coma</td>
+                                    <td>;</td>
+                                </tr>      <tr >
+                                    <td>18</td>
+                                    <td>2</td>
+                                    <td>*</td>
+                                    <td>tk_multiplicacion</td>
+                                    <td>*</td>
+                                </tr>      <tr >
+                                    <td>18</td>
+                                    <td>2</td>
+                                    <td>b</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>18</td>
+                                    <td>5</td>
+                                    <td>=</td>
+                                    <td>tk_asignacion</td>
+                                    <td>=</td>
+                                </tr>      <tr >
+                                    <td>18</td>
+                                    <td>8</td>
+                                    <td>int</td>
+                                    <td>tk_tipo_int</td>
+                                    <td>int</td>
+                                </tr>      <tr >
+                                    <td>18</td>
+                                    <td>8</td>
+                                    <td>er</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>18</td>
+                                    <td>11</td>
+                                    <td>;</td>
+                                    <td>tk_punto_coma</td>
+                                    <td>;</td>
+                                </tr>      <tr >
+                                    <td>19</td>
+                                    <td>2</td>
+                                    <td>}</td>
+                                    <td>tk_llave_cerrada</td>
+                                    <td>}</td>
+                                </tr>      <tr >
+                                    <td>20</td>
+                                    <td>7</td>
+                                    <td>return</td>
+                                    <td>tk_reservada_return</td>
+                                    <td>return</td>
+                                </tr>      <tr >
+                                    <td>20</td>
+                                    <td>8</td>
+                                    <td>;</td>
+                                    <td>tk_punto_coma</td>
+                                    <td>;</td>
+                                </tr>      <tr >
+                                    <td>21</td>
+                                    <td>2</td>
+                                    <td>}</td>
+                                    <td>tk_llave_cerrada</td>
+                                    <td>}</td>
+                                </tr>      <tr >
+                                    <td>22</td>
+                                    <td>4</td>
+                                    <td>int</td>
+                                    <td>tk_tipo_int</td>
+                                    <td>int</td>
+                                </tr>      <tr >
+                                    <td>22</td>
+                                    <td>4</td>
+                                    <td>main</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>22</td>
+                                    <td>7</td>
+                                    <td>(</td>
+                                    <td>tk_par_abierto</td>
+                                    <td>(</td>
+                                </tr>      <tr >
+                                    <td>22</td>
+                                    <td>11</td>
+                                    <td>void</td>
+                                    <td>tk_reservda_void</td>
+                                    <td>void</td>
+                                </tr>      <tr >
+                                    <td>22</td>
+                                    <td>12</td>
+                                    <td>)</td>
+                                    <td>tk_par_cerrado</td>
+                                    <td>)</td>
+                                </tr>      <tr >
+                                    <td>22</td>
+                                    <td>12</td>
+                                    <td>/*función principal del programa*/</td>
+                                    <td>tk_comentario_var_filas</td>
+                                    <td>\/\*.*\*\/</td>
+                                </tr>      <tr >
+                                    <td>23</td>
+                                    <td>2</td>
+                                    <td>{</td>
+                                    <td>tk_llave_abierta</td>
+                                    <td>{</td>
+                                </tr>      <tr >
+                                    <td>24</td>
+                                    <td>4</td>
+                                    <td>int</td>
+                                    <td>tk_tipo_int</td>
+                                    <td>int</td>
+                                </tr>      <tr >
+                                    <td>24</td>
+                                    <td>4</td>
+                                    <td>contador</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>24</td>
+                                    <td>6</td>
+                                    <td>a</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>24</td>
+                                    <td>9</td>
+                                    <td>=</td>
+                                    <td>tk_asignacion</td>
+                                    <td>=</td>
+                                </tr>      <tr >
+                                    <td>24</td>
+                                    <td>9</td>
+                                    <td>9</td>
+                                    <td>tk_dato_tipo_Int</td>
+                                    <td>dd*</td>
+                                </tr>      <tr >
+                                    <td>24</td>
+                                    <td>11</td>
+                                    <td>b</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>24</td>
+                                    <td>14</td>
+                                    <td>=</td>
+                                    <td>tk_asignacion</td>
+                                    <td>=</td>
+                                </tr>      <tr >
+                                    <td>24</td>
+                                    <td>14</td>
+                                    <td>0</td>
+                                    <td>tk_dato_tipo_Int</td>
+                                    <td>dd*</td>
+                                </tr>      <tr >
+                                    <td>24</td>
+                                    <td>17</td>
+                                    <td>;</td>
+                                    <td>tk_punto_coma</td>
+                                    <td>;</td>
+                                </tr>      <tr >
+                                    <td>24</td>
+                                    <td>17</td>
+                                    <td>/*variables locales, accesibles solo */</td>
+                                    <td>tk_comentario_var_filas</td>
+                                    <td>\/\*.*\*\/</td>
+                                </tr>      <tr >
+                                    <td>25</td>
+                                    <td>1</td>
+                                    <td>/* por main*/</td>
+                                    <td>tk_comentario_var_filas</td>
+                                    <td>\/\*.*\*\/</td>
+                                </tr>      <tr >
+                                    <td>26</td>
+                                    <td>1</td>
+                                    <td>sum</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>26</td>
+                                    <td>4</td>
+                                    <td>=</td>
+                                    <td>tk_asignacion</td>
+                                    <td>=</td>
+                                </tr>      <tr >
+                                    <td>26</td>
+                                    <td>4</td>
+                                    <td>0</td>
+                                    <td>tk_dato_tipo_Int</td>
+                                    <td>dd*</td>
+                                </tr>      <tr >
+                                    <td>26</td>
+                                    <td>7</td>
+                                    <td>;</td>
+                                    <td>tk_punto_coma</td>
+                                    <td>;</td>
+                                </tr>      <tr >
+                                    <td>27</td>
+                                    <td>4</td>
+                                    <td>int</td>
+                                    <td>tk_tipo_int</td>
+                                    <td>int</td>
+                                </tr>      <tr >
+                                    <td>27</td>
+                                    <td>4</td>
+                                    <td>ercambio</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>27</td>
+                                    <td>7</td>
+                                    <td>(</td>
+                                    <td>tk_par_abierto</td>
+                                    <td>(</td>
+                                </tr>      <tr >
+                                    <td>27</td>
+                                    <td>7</td>
+                                    <td>a</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>27</td>
+                                    <td>9</td>
+                                    <td>b</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>27</td>
+                                    <td>12</td>
+                                    <td>)</td>
+                                    <td>tk_par_cerrado</td>
+                                    <td>)</td>
+                                </tr>      <tr >
+                                    <td>27</td>
+                                    <td>13</td>
+                                    <td>;</td>
+                                    <td>tk_punto_coma</td>
+                                    <td>;</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>1</td>
+                                    <td>for</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>4</td>
+                                    <td>(</td>
+                                    <td>tk_par_abierto</td>
+                                    <td>(</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>4</td>
+                                    <td>contador</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>7</td>
+                                    <td>=</td>
+                                    <td>tk_asignacion</td>
+                                    <td>=</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>7</td>
+                                    <td>a</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>10</td>
+                                    <td>;</td>
+                                    <td>tk_punto_coma</td>
+                                    <td>;</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>10</td>
+                                    <td>contador</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>14</td>
+                                    <td><=</td>
+                                    <td>tk_menor_o_igual_que</td>
+                                    <td><=</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>14</td>
+                                    <td>b</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>17</td>
+                                    <td>;</td>
+                                    <td>tk_punto_coma</td>
+                                    <td>;</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>17</td>
+                                    <td>contador</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>20</td>
+                                    <td>+</td>
+                                    <td>tk_suma</td>
+                                    <td>+</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>21</td>
+                                    <td>+</td>
+                                    <td>tk_suma</td>
+                                    <td>+</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>22</td>
+                                    <td>)</td>
+                                    <td>tk_par_cerrado</td>
+                                    <td>)</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>22</td>
+                                    <td>suma</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>25</td>
+                                    <td>(</td>
+                                    <td>tk_par_abierto</td>
+                                    <td>(</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>25</td>
+                                    <td>contador</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>28</td>
+                                    <td>)</td>
+                                    <td>tk_par_cerrado</td>
+                                    <td>)</td>
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>29</td>
+                                    <td>;</td>
+                                    <td>tk_punto_coma</td>
+                                    <td>;</td>
+                                </tr>      <tr >
+                                    <td>29</td>
+                                    <td>1</td>
+                                    <td>printf</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>29</td>
+                                    <td>4</td>
+                                    <td>(</td>
+                                    <td>tk_par_abierto</td>
+                                    <td>(</td>
+                                </tr>      <tr >
+                                    <td>29</td>
+                                    <td>5</td>
+                                    <td>%</td>
+                                    <td>tk_resto</td>
+                                    <td>%</td>
+                                </tr>      <tr >
+                                    <td>29</td>
+                                    <td>5</td>
+                                    <td>d</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>29</td>
+                                    <td>7</td>
+                                    <td>n</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>29</td>
+                                    <td>9</td>
+                                    <td>suma</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|d)*'</td>
+                                </tr>      <tr >
+                                    <td>29</td>
+                                    <td>12</td>
+                                    <td>)</td>
+                                    <td>tk_par_cerrado</td>
+                                    <td>)</td>
+                                </tr>      <tr >
+                                    <td>29</td>
+                                    <td>13</td>
+                                    <td>;</td>
+                                    <td>tk_punto_coma</td>
+                                    <td>;</td>
+                                </tr>      <tr >
+                                    <td>30</td>
+                                    <td>7</td>
+                                    <td>return</td>
+                                    <td>tk_reservada_return</td>
+                                    <td>return</td>
+                                </tr>      <tr >
+                                    <td>30</td>
+                                    <td>8</td>
+                                    <td>(</td>
+                                    <td>tk_par_abierto</td>
+                                    <td>(</td>
+                                </tr>      <tr >
+                                    <td>30</td>
+                                    <td>8</td>
+                                    <td>0</td>
+                                    <td>tk_dato_tipo_Int</td>
+                                    <td>dd*</td>
+                                </tr>      <tr >
+                                    <td>30</td>
+                                    <td>11</td>
+                                    <td>)</td>
+                                    <td>tk_par_cerrado</td>
+                                    <td>)</td>
+                                </tr>      <tr >
+                                    <td>30</td>
+                                    <td>12</td>
+                                    <td>;</td>
+                                    <td>tk_punto_coma</td>
+                                    <td>;</td>
+                                </tr>      <tr >
+                                    <td>31</td>
+                                    <td>2</td>
+                                    <td>}</td>
+                                    <td>tk_llave_cerrada</td>
+                                    <td>}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -103,7 +931,583 @@
                             </thead>
     
                             <tbody>
-    
+          <tr >
+                                    <td>1</td>
+                                    <td>1</td>
+                                    <td>#include <stdio.h>
+int sum; /* variable global, accesible desde cualquier parte */
+ /* del programa*/
+void suma(int x) /* variable local declarada como parámetro, */
+ /* accesible solo por la función suma*/
+{
+ sum=sum+x;
+ return;
+}
+void intercambio(int *a,int *b)
+{
+ if (*a>*b)
+ {
+ int inter; /* variable local, accesible solo dentro del */
+ /* bloque donde se declara*/
+ inter=*a;
+ *a=*b;
+ *b=inter;
+ }
+ return;
+}
+int main(void) /*función principal del programa*/
+{
+ int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>1</td>
+                                    <td>6</td>
+                                    <td>.h>
+int sum; /* variable global, accesible desde cualquier parte */
+ /* del programa*/
+void suma(int x) /* variable local declarada como parámetro, */
+ /* accesible solo por la función suma*/
+{
+ sum=sum+x;
+ return;
+}
+void intercambio(int *a,int *b)
+{
+ if (*a>*b)
+ {
+ int inter; /* variable local, accesible solo dentro del */
+ /* bloque donde se declara*/
+ inter=*a;
+ *a=*b;
+ *b=inter;
+ }
+ return;
+}
+int main(void) /*función principal del programa*/
+{
+ int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>3</td>
+                                    <td>1</td>
+                                    <td> /* del programa*/
+void suma(int x) /* variable local declarada como parámetro, */
+ /* accesible solo por la función suma*/
+{
+ sum=sum+x;
+ return;
+}
+void intercambio(int *a,int *b)
+{
+ if (*a>*b)
+ {
+ int inter; /* variable local, accesible solo dentro del */
+ /* bloque donde se declara*/
+ inter=*a;
+ *a=*b;
+ *b=inter;
+ }
+ return;
+}
+int main(void) /*función principal del programa*/
+{
+ int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>5</td>
+                                    <td>1</td>
+                                    <td> /* accesible solo por la función suma*/
+{
+ sum=sum+x;
+ return;
+}
+void intercambio(int *a,int *b)
+{
+ if (*a>*b)
+ {
+ int inter; /* variable local, accesible solo dentro del */
+ /* bloque donde se declara*/
+ inter=*a;
+ *a=*b;
+ *b=inter;
+ }
+ return;
+}
+int main(void) /*función principal del programa*/
+{
+ int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>7</td>
+                                    <td>1</td>
+                                    <td> sum=sum+x;
+ return;
+}
+void intercambio(int *a,int *b)
+{
+ if (*a>*b)
+ {
+ int inter; /* variable local, accesible solo dentro del */
+ /* bloque donde se declara*/
+ inter=*a;
+ *a=*b;
+ *b=inter;
+ }
+ return;
+}
+int main(void) /*función principal del programa*/
+{
+ int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>8</td>
+                                    <td>1</td>
+                                    <td> return;
+}
+void intercambio(int *a,int *b)
+{
+ if (*a>*b)
+ {
+ int inter; /* variable local, accesible solo dentro del */
+ /* bloque donde se declara*/
+ inter=*a;
+ *a=*b;
+ *b=inter;
+ }
+ return;
+}
+int main(void) /*función principal del programa*/
+{
+ int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>10</td>
+                                    <td>17</td>
+                                    <td>,int *b)
+{
+ if (*a>*b)
+ {
+ int inter; /* variable local, accesible solo dentro del */
+ /* bloque donde se declara*/
+ inter=*a;
+ *a=*b;
+ *b=inter;
+ }
+ return;
+}
+int main(void) /*función principal del programa*/
+{
+ int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>12</td>
+                                    <td>1</td>
+                                    <td> if (*a>*b)
+ {
+ int inter; /* variable local, accesible solo dentro del */
+ /* bloque donde se declara*/
+ inter=*a;
+ *a=*b;
+ *b=inter;
+ }
+ return;
+}
+int main(void) /*función principal del programa*/
+{
+ int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>13</td>
+                                    <td>1</td>
+                                    <td> {
+ int inter; /* variable local, accesible solo dentro del */
+ /* bloque donde se declara*/
+ inter=*a;
+ *a=*b;
+ *b=inter;
+ }
+ return;
+}
+int main(void) /*función principal del programa*/
+{
+ int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>14</td>
+                                    <td>1</td>
+                                    <td> int inter; /* variable local, accesible solo dentro del */
+ /* bloque donde se declara*/
+ inter=*a;
+ *a=*b;
+ *b=inter;
+ }
+ return;
+}
+int main(void) /*función principal del programa*/
+{
+ int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>15</td>
+                                    <td>1</td>
+                                    <td> /* bloque donde se declara*/
+ inter=*a;
+ *a=*b;
+ *b=inter;
+ }
+ return;
+}
+int main(void) /*función principal del programa*/
+{
+ int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>16</td>
+                                    <td>1</td>
+                                    <td> inter=*a;
+ *a=*b;
+ *b=inter;
+ }
+ return;
+}
+int main(void) /*función principal del programa*/
+{
+ int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>17</td>
+                                    <td>1</td>
+                                    <td> *a=*b;
+ *b=inter;
+ }
+ return;
+}
+int main(void) /*función principal del programa*/
+{
+ int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>18</td>
+                                    <td>1</td>
+                                    <td> *b=inter;
+ }
+ return;
+}
+int main(void) /*función principal del programa*/
+{
+ int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>19</td>
+                                    <td>1</td>
+                                    <td> }
+ return;
+}
+int main(void) /*función principal del programa*/
+{
+ int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>20</td>
+                                    <td>1</td>
+                                    <td> return;
+}
+int main(void) /*función principal del programa*/
+{
+ int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>24</td>
+                                    <td>1</td>
+                                    <td> int contador,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>24</td>
+                                    <td>6</td>
+                                    <td>,a=9,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>24</td>
+                                    <td>11</td>
+                                    <td>,b=0; /*variables locales, accesibles solo */
+ /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>25</td>
+                                    <td>1</td>
+                                    <td> /* por main*/
+ sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>26</td>
+                                    <td>1</td>
+                                    <td> sum=0;
+ intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>27</td>
+                                    <td>1</td>
+                                    <td> intercambio(&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>27</td>
+                                    <td>7</td>
+                                    <td>&a,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>27</td>
+                                    <td>9</td>
+                                    <td>,&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>27</td>
+                                    <td>9</td>
+                                    <td>&b);
+ for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>28</td>
+                                    <td>1</td>
+                                    <td> for(contador=a;contador<=b;contador++) suma(contador);
+ printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>29</td>
+                                    <td>1</td>
+                                    <td> printf(“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>29</td>
+                                    <td>4</td>
+                                    <td>“%d\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>29</td>
+                                    <td>7</td>
+                                    <td>\n”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>29</td>
+                                    <td>9</td>
+                                    <td>”,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>29</td>
+                                    <td>9</td>
+                                    <td>,suma);
+ return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>30</td>
+                                    <td>1</td>
+                                    <td> return(0);
+}
+$</td>
+
+                                </tr>      <tr >
+                                    <td>32</td>
+                                    <td>1</td>
+                                    <td>$</td>
+
+                                </tr>
                             </tbody>
                         </table>
                     </div>

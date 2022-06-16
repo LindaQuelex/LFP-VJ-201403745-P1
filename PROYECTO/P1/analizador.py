@@ -23,7 +23,7 @@ class Lexico2:
         self.salto= '\n'
 
         self.tokens = {
-        "tk_parametro": automatas2.AFD_Parametro,
+        "tk_comentario_var_filas": automatas2.AFDComentarioVL,
         "tk_tipo_int": "int",
         "tk_tipo_double": "double",
         "tk_tipo_string": "string",
@@ -58,7 +58,7 @@ class Lexico2:
         "tk_asignacion": "=",  #FALTA AGREGAR AL MANUAL TÉCNICO
         "tk_comentario_simple": automatas2.AFDComentarioSimple,
         "tk_division": "/",
-        # "tk_comentario_var_filas": self.AFDComentarioVL,
+
         "tk_dato_double": automatas2.AFD_DatoTipoDouble,
         "tk_dato_tipo_Int": automatas2.AFD_DatoTipoInt,  #ESTA REPETIDO EL DATO INT EN EL MANUAL TÉCNICO
         "tk_dato_char": automatas2.AFD_DatoTipoChar,
@@ -96,7 +96,7 @@ class Lexico2:
                 else:
                     siguiente = posicion + 1
                     anterior = False
-                    while siguiente <= len(entrada) and entrada[siguiente - 1] != self.salto :
+                    while siguiente <= len(entrada) and entrada[siguiente - 1]:
                         lexema = entrada[posicion : siguiente]
                         estado_encontrado = patron(lexema)
                         aceptacion=estado_encontrado
@@ -122,7 +122,7 @@ class Lexico2:
                         expresion2=exp_R.ExpresionesRegulares(token)
                         # print(expresion["er"])
                         datos_token = Token1(fila,columna, lexema, token, expresion2['er'])
-
+                        #enviar a método de estados
                         self.list_tokens.append(datos_token)
                         # estados=Estados("estado","caracter","lexema","siguiente estado")                   
                         # estados3=patron(lexema) 

@@ -41,11 +41,10 @@ class ER:
             "tk_division": "/" ,
             "tk_boolean_true":"true",
             "tk_boolean_false":"false",
-            # "tk_comentario_var_filas": 'Er->comentarioMultilinea',
+            "tk_comentario_var_filas": "\/\*.*\*\/",
             "tk_dato_double" : "dd+.dd*",
             "tk_dato_tipo_Int":"dd*", 
             "tk_dato_char":"\'.*\'",
-            "tk_parametro":"\(.*,\)\*",
             "tk_dato_string":"\".*\"", 
             "tk_identificador":  "'_|L(_|L|d)*'",}
             match = dict()

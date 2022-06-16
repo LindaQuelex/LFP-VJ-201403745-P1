@@ -157,3 +157,4 @@ Char _Dato_tipo__Char1 = 'a';
 
 # Conversión de expresión regular a AFD a través del método del árbol 
 
+[![Esta es una imagen de ejemplo](C:\Users\Linda Quelex\Desktop\UNIVERSIDAD 2022\(3.1) LAB LFP\PROYECTOS\PROYECTO1\LFP-VJ-201403745-P1\DOCUMENTACIÓN\ARBOLES_PROYECTO1_LFP.pdf)](https://ejemplo.com)
