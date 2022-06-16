@@ -35,15 +35,15 @@ Boolean B= True;
 - String
 - Char
 - Boolean
-- +
-- -
-- *
+- \+
+- \-
+- \*
 - /
 - %
 - ==
 - !=
-- >
-- >=
+- \>
+- \>=
 - <
 - <=
 - &&
@@ -61,54 +61,54 @@ Boolean B= True;
 - while
 - do
 - void
-- (parametro,)*
 - return
 
 
 # Definición de tokens
 
-| Token                 | Descripción                          | Patrón              |
-| --------------------- | ------------------------------------ | ------------------- |
-| comentario_simple     | Línea de comentario simple           | ^\/\/.*\n           |
-| comentario_var_líneas | Comentario de varias líneas          | (\/\*(\s*|.*?)*\*\/)|(\/\/.*)  |
-| tipo_int              | Tipo de dato entero                  | int                 |
-| tipo_double           | Tipo de dato decimal                 | double              |
-| tipo_string           | Tipo de dato String                  | string              |
-| tipo_char             | Tipo de dato Char                    | char                |
-| tipo_boolean          | Tipo de dato boolean                 | boolean             |
-| suma                  | Operador suma                        | +                   |
-| resta                 | Operador resta                       | -                   |
-| multiplicacion        | Operador multiplicación              | *                   |
-| division              | Operador división                    | /                   |
-| resto                 | Operador resto                       | %                   |
-| igualacion            | Operador igualación                  | ==                  |
-| diferenciacion        | Operador diferenciación              | !=                  |
-| mayor_que             | Operador mayor que                   | >                   |
-| mayor_o_igual_que     | Operador mayor o igual que           | >=                  |
-| menor_que             | Operador menor que                   | <                   |
-| menor_o_igual_que     | Operador menor o igual que           | <=                  |
-| and                   | Operador and                         | &&                  |
-| or                    | Operador or                          | \|\|                |
-| not                   | Operador not                         | !                   |
-| punto_coma            | Punto y coma                         | ;                   |
-| condicional           | Condicional                          | if                  |
-| par_abierto           | Paréntesis abierto                   | (                   |
-| par_cerrado           | Paréntesis cerrado                   | )                   |
-| dato_tipo_Int         | Dato tipo Int                        | ^\d+$               |
-| identificador         | Cualquier identificador del lenguaje | _|[a-zA-Z]([a-zA-Z0-9]*)_*  |
-| llave_abierta         | Llave abierta                        | {                   |
-| llave_cerrada         | Llave cerrada                        | }                   |
-| condicional_else      | Condicional else                     | else                |
-| iterativo_while       | Iteración con ciclo while            | while               |
-| iterativo_do          | Iteración con ciclo do while         | do                  |
-| reservada_void        | Palabra reservada                    | void                |
-| reservada_return      | Retorno                              | return              |
-| dato_int              | Dato tipo entero                     | [0-9]+
-| dato_double           | Dato tipo double                     | [+-]?[0-9]+\.[0-9]+ |
-| dato_string           | Datos tipo String                    | "([^"]\|(\"))*.*"   |
-| dato_char             | Dato tipo char                       |                     | definir                  |
-| dato_boolean          | Dato tipo boolean                    | true|false          |
-| parametro             | Parámetro                            | \(.*\,\)\*          |
+| Token                   | Descripción                          | Patrón                        |
+| ----------------------- | ------------------------------------ | ----------------------------- |
+| comentario_simple       | Línea de comentario simple           | ^\/\/.*\n                     |
+| comentario_var_líneas   | Comentario de varias líneas          | (\/\*(\s*l.*?)*\*\/)l(\/\/.*) |
+| tipo_int                | Tipo de dato entero                  | int                           |
+| tipo_double             | Tipo de dato decimal                 | double                        |
+| tipo_string             | Tipo de dato String                  | string                        |
+| tipo_char               | Tipo de dato Char                    | char                          |
+| tipo_boolean            | Tipo de dato boolean                 | boolean                       |
+| suma                    | Operador suma                        | +                             |
+| resta                   | Operador resta                       | -                             |
+| multiplicacion          | Operador multiplicación              | *                             |
+| division                | Operador división                    | /                             |
+| resto                   | Operador resto                       | %                             |
+| igualacion              | Operador igualación                  | ==                            |
+| diferenciacion          | Operador diferenciación              | !=                            |
+| mayor_que               | Operador mayor que                   | >                             |
+| mayor_o_igual_que       | Operador mayor o igual que           | >=                            |
+| menor_que               | Operador menor que                   | <                             |
+| menor_o_igual_que       | Operador menor o igual que           | <=                            |
+| and                     | Operador and                         | &&                            |
+| or                      | Operador or                          | \|\|                          |
+| not                     | Operador not                         | !                             |
+| punto_coma              | Punto y coma                         | ;                             |
+| condicional             | Condicional                          | if                            |
+| par_abierto             | Paréntesis abierto                   | (                             |
+| par_cerrado             | Paréntesis cerrado                   | )                             |
+| dato_tipo_Int           | Dato tipo Int                        | ^\d+$                         |
+| dato_tipo_boolean_true  | Dato tipo boolean                    | true                          |
+| dato_tipo_boolean_false | Dato tipo boolean                    | false                         |
+| identificador           | Cualquier identificador del lenguaje | _l [a-zA-Z]([a-zA-Z0-9]*)_*   |
+| llave_abierta           | Llave abierta                        | {                             |
+| llave_cerrada           | Llave cerrada                        | }                             |
+| condicional_else        | Condicional else                     | else                          |
+| iterativo_while         | Iteración con ciclo while            | while                         |
+| iterativo_do            | Iteración con ciclo do while         | do                            |
+| reservada_void          | Palabra reservada                    | void                          |
+| reservada_return        | Retorno                              | return                        |
+| dato_int                | Dato tipo entero                     | [0-9]+                        |
+| dato_double             | Dato tipo double                     | [+-]?[0-9]+\.[0-9]+           |
+| dato_string             | Datos tipo String                    | "([^"]\|(\"))*.*"             |
+| dato_char               | Dato tipo char                       | '.*'                          |
+| parametro               | Parámetro                            | \(.*\,\)\*                    |
 
 
 
@@ -156,5 +156,11 @@ Char _Dato_tipo__Char1 = 'a';
 | return                                                        | reservada_return      |
 
 # Conversión de expresión regular a AFD a través del método del árbol 
+<ol>
+<li><p>Método del árbol</p></li>
+<li>
+<p>Detalle</p>
+<p><img src="ARBOLES_PROYECTO1_LFP.png" alt="diagramas" /></p>
+</li>
 
-[![Esta es una imagen de ejemplo](C:\Users\Linda Quelex\Desktop\UNIVERSIDAD 2022\(3.1) LAB LFP\PROYECTOS\PROYECTO1\LFP-VJ-201403745-P1\DOCUMENTACIÓN\ARBOLES_PROYECTO1_LFP.pdf)](https://ejemplo.com)
+</ol>
