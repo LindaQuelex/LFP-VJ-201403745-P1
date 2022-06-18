@@ -78,58 +78,65 @@ def createHTML(contenido):
     """		
 
 #TABLA DE ESTADOS
-    body = body + f"""
-	<section class="ftco-section">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Reporte de Estados</h2>
-				</div>
-			</div>
-    """
-    
-    body = body + f"""
-            <div class = "row" >
-                <div class = "col-md-12" > 
-                    <div class = "table-wrap" >
-                        <table class = "table" >
-                            <thead class="thead-primary">
-                            <tr>
-                                <th> Estado </th>
-                                <th> Caracter </th>
-                                <th> Lexema reconocido</th>
-                                <th> Siguiente estado </th>
-                            </tr>
-                            </thead>
-    """
-
-    body = body + f"""
-                            <tbody>
-    """
-    	
-    # ? Contenido BODY HTML
-    tokens = contenido["estados"]
-
-    for dato in tokens:
-        body = body + f"""      <tr >
-                                    <td> S{dato.estado} </td>
-                                    <td> {dato.caracter}</td>
-                                    <td> {dato.lexema_reconocido} </td>
-                                    <td> S{dato.sig_estado} </td>
-
-                                </tr>"""
-
-    body = body + f"""
-                            </tbody>
-                        </table>
+    if contenido['estados']:
+        body = body + f"""
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center mb-5">
+                        <h2 class="heading-section">Reporte de Estados</h2>
                     </div>
-				</div>
-			</div>
-		</div>
-	</section>
-    """		
+                </div>
+        """
+        estados = contenido['estados']
+        for dato2 in estados:
+            body = body + f"""
+                <div class = "row" >
+                    <div class = "col-md-12" > 
+                        <div class = "table-wrap" >
+                            <table class = "table" >
+                                <thead class="thead-primary">
+                                <tr>
+                                    <th> Estado </th>
+                                    <th> Caracter </th>
+                                    <th> Lexema reconocido</th>
+                                    <th> Siguiente estado </th>
+                                </tr>
+                                </thead>
+        """
 
-#TABLA DE ERRORES
+            body = body + f"""
+                                <tbody>
+        """
+            
+        #Contenido BODY HTML
+
+            for x in dato2.estados:
+                body = body + f"""   
+                                    <tr >"""
+                for y in x:
+                    body = body + f""" 
+                                        <td> {y} </td>
+                                        """
+                body = body + f"""                       
+            
+                                    </tr>"""
+
+            body = body + f"""
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            """		
+
+
+
+
+
+    #TABLA DE ERRORES
     body = body + f"""
 	<section class="ftco-section">
 		<div class="container">
@@ -159,6 +166,15 @@ def createHTML(contenido):
                             <tbody>
     """
     	
+
+
+
+
+
+
+
+
+
     # ? Contenido BODY HTML
     errores = contenido["errores"]
 

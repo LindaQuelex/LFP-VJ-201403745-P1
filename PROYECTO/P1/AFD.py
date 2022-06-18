@@ -54,10 +54,10 @@ class Automatas:
         # print (estados2.lexema_reconocido)
         return estado in estados_aceptacion #estados2
 
-    def AFDComentarioVL(self,lexema): # arreglar
+    def AFDComentarioVL(self,lexema): # corregir
         estado=0
         er="\/\*.*\*\/"
-        estados_aceptacion = [3]
+        estados_aceptacion = [4]
         reconocido: str = ''        
         for caracter in lexema:
             if estado==0:
@@ -75,25 +75,36 @@ class Automatas:
                 else:
                     return False
             elif estado==2:
-                if caracter != '*':
-                    reconocido+=caracter
-                    estado=2       
-                    # print(reconocido)
-                elif caracter=='\n':
+                if caracter != '*' and '/':
                     reconocido+=caracter
                     estado=2       
                     # print(reconocido)
                 elif caracter =='*':
                     estado=3
+                    
+                elif caracter=='\n':
+                    reconocido+=caracter
+                    estado=3      
+                    # print(reconocido)
+
                 else: 
                     return False
             elif estado==3:
-                if caracter =='/':
+                if caracter =='*':
                     estado=3
+                    reconocido+=caracter
+                    # print(reconocido)
+                elif caracter !='*' and caracter !='/':
+                    estado=2
+                    reconocido+=caracter
+                elif caracter == '/':
+                    estado=4
+                    # print(reconocido)
                 else: 
                     return False
-           
-
+            elif estado==4:
+                return False
+        # print(reconocido)
         return estado in estados_aceptacion 
     
     def AFD_DatoTipoInt(self,lexema):
@@ -206,7 +217,7 @@ class Automatas:
                     estado=1
                     reconocido+=caracter
                 elif caracter =='\n':
-                    estado=1
+                    return False
                     reconocido+=caracter
                 elif caracter =='"':
                     estado=2
@@ -218,10 +229,10 @@ class Automatas:
                 estado=-1
         return estado in estados_aceptacion
     
-    def AFD_DatoTipoChar(self,lexema): 
+    def AFD_DatoTipoChar(self,lexema):   #corregir
         estado=0 
         er= "\'.*\'"
-        estados_aceptacion = [2]
+        estados_aceptacion = [3]
         reconocido: str = ''
         for caracter in lexema:
             if estado==0:
@@ -231,10 +242,7 @@ class Automatas:
                 else:
                     return False
             elif estado==1:
-                if caracter.isalpha():
-                    estado=2
-                    reconocido+=caracter
-                elif not caracter.isalpha():
+                if caracter!='\n' and caracter not in self.comillasimple:
                     estado=2
                     reconocido+=caracter
                 # elif caracter in self.comillasimple:
@@ -243,9 +251,12 @@ class Automatas:
                     return False
             elif estado==2: 
                 if caracter in self.comillasimple:
-                    estado=2
+                    estado=3
                     reconocido+=caracter
                 else:
                     return False
+            elif estado==3:
+                return False
+            
         #estados2=Estados(estado,caracter,reconocido,estado)
         return estado in estados_aceptacion #estados2

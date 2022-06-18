@@ -1,12 +1,13 @@
 
 from errors import Errors
 from token1 import Token1
-from estados import Estados
+from Rep_estados import *
 from AFD import *
 from ExR import *
 
 automatas2= Automatas()
 exp_R= ER()
+r_estados=Rep_Estados()
 
 class Lexico2:
 
@@ -79,6 +80,7 @@ class Lexico2:
                 columna=1
             if caracter in self.i:
                 posicion+=1
+                
             for token, patron in self.tokens.items():
                 if isinstance(patron, str):
                     if posicion + len(patron) > len(entrada): 
@@ -94,9 +96,10 @@ class Lexico2:
                         #print(datos_token.row, datos_token.col, datos_token.lexema, datos_token.token)
                         self.list_tokens.append(datos_token)
                 else:
+
                     siguiente = posicion + 1
                     anterior = False
-                    while siguiente <= len(entrada) and entrada[siguiente - 1]:
+                    while siguiente <= len(entrada):# and entrada[siguiente - 1]:
                         lexema = entrada[posicion : siguiente]
                         estado_encontrado = patron(lexema)
                         aceptacion=estado_encontrado
@@ -118,26 +121,60 @@ class Lexico2:
                         siguiente += 1
 
                     if estado_encontrado:
+                        if '\n' in lexema:
                         #expresion=self.ExpresionesRegulares(token,patron)
-                        expresion2=exp_R.ExpresionesRegulares(token)
-                        # print(expresion["er"])
-                        datos_token = Token1(fila,columna, lexema, token, expresion2['er'])
-                        #enviar a método de estados
-                        self.list_tokens.append(datos_token)
-                        # estados=Estados("estado","caracter","lexema","siguiente estado")                   
-                        # estados3=patron(lexema) 
-                        # print('este es el estado 3', estados3[1])                
-                        # self.list_estados.append(estados3[1])
+                            expresion2=exp_R.ExpresionesRegulares(token)
+                            # print(expresion["er"])
+                            datos_token = Token1(fila,columna, lexema, token, expresion2['er'])
+                            #enviar a método de estados
+                            self.list_tokens.append(datos_token)
+                            # estados=Estados("estado","caracter","lexema","siguiente estado")                   
+                            # estados3=patron(lexema) 
+                            # print('este es el estado 3', estados3[1])                
+                            # self.list_estados.append(estados3[1])
 
-                        columna += siguiente - posicion + 1
-                        posicion = siguiente - 1
+                            # enviar_estados=r_estados.reconocido_estados(token,lexema)
+                            # self.list_estados.append(enviar_estados)
+                            #columna += siguiente - posicion + 1
+                            posicion = siguiente - 1
+                        else:
+                            columna+=len(lexema)
+                            expresion2=exp_R.ExpresionesRegulares(token)
+                            # print(expresion["er"])
+                            datos_token = Token1(fila,columna, lexema, token, expresion2['er'])
+                            #enviar a método de estados
+                            self.list_tokens.append(datos_token)
+                            # estados=Estados("estado","caracter","lexema","siguiente estado")                   
+                            # estados3=patron(lexema) 
+                            # print('este es el estado 3', estados3[1])                
+                            # self.list_estados.append(estados3[1])
+                            #columna += siguiente - posicion + 1
+
+
+                            # enviar_estados=r_estados.reconocido_estados(token,lexema)
+                            # self.list_estados.append(enviar_estados)
+
+
+
+
+
+                            posicion = siguiente - 1
+
+                            # def arbol(self, tipo,lexema) -> list:
+                                # constructor = ''
+                                # if tipo == 'tk_dato_int':
+                                #     valor_estado = self.EstadosNumeroEntero(lexema)
+                                #     constructor = Buil(tipo,lexema,valor_estado)
 
                 if estado_encontrado: break
 
             if not estado_encontrado:
-                posicion += 1
+                if siguiente>len(entrada):
+                    lexema=entrada[posicion]
+                
                 datos_error = Errors(fila,columna, lexema)
                 self.list_errors.append(datos_error)
+                posicion += 1
                # print(datos_error.row, datos_error.col, datos_error.lexema)
         dt = {
         'tokens':self.list_tokens,

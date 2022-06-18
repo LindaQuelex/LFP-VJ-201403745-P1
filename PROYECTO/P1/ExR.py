@@ -37,16 +37,16 @@ class ER:
             "tk_reservada_return": "return",
             "tk_igualacion": "==",
             "tk_asignacion":  "=", 
-            "tk_comentario_simple": "//.*" ,
+            "tk_comentario_simple": "//.*\n" ,
             "tk_division": "/" ,
             "tk_boolean_true":"true",
             "tk_boolean_false":"false",
             "tk_comentario_var_filas": "\/\*.*\*\/",
-            "tk_dato_double" : "dd+.dd*",
-            "tk_dato_tipo_Int":"dd*", 
-            "tk_dato_char":"\'.*\'",
+            "tk_dato_double" : "[0-9][0-9]+.[0-9][0-9]*",
+            "tk_dato_tipo_Int":"[0-9][0-9]*", 
+            "tk_dato_char":"\'.*{1}\'",
             "tk_dato_string":"\".*\"", 
-            "tk_identificador":  "'_|L(_|L|d)*'",}
+            "tk_identificador":  "'_|L(_|L|[0-9])*'",}
             match = dict()
             for token, exp_reg in expresionesregulares.items():
                 if tk == token:
