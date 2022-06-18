@@ -6,11 +6,14 @@ class Rep_Estados:
 
     def reconocido_estados(self, tipo, lexema_reconocido):
         if tipo=='tk_dato_tipo_Int':
-            t=self.TE_DatoTipoInt(lexema_reconocido)
-            c=Rep_Estados(tipo, lexema_reconocido,t)
+            tablaint=self.TE_DatoTipoInt(lexema_reconocido)
+            c=Estados(tipo, lexema_reconocido,tablaint)
+        elif tipo=='tk_dato_double':
+            tabladouble=self.TE_DatoTipoDouble(lexema_reconocido)
+            c=Estados(tipo, lexema_reconocido,tabladouble)
+           
+           
         return c
-
-
 
     def TE_ComentarioSimple(self,lexema_reconocido):
         pass
@@ -19,7 +22,6 @@ class Rep_Estados:
         pass
 
     def TE_DatoTipoInt(self,lexema_reconocido):
-     
         estados_def=['S0','S1']
         i=0
         size=0
@@ -29,21 +31,21 @@ class Rep_Estados:
         contador=0
         while i < len(lexema_reconocido):
             if size==0:
-                estado=f'{estados_def[0]}'
+                estado=estados_def[0]
             else:
-                estado=f'{estados_def[1]}'
+                estado=estados_def[1]
             caracter=lexema_reconocido[i]
             if i==0:
-                transicion=f'{estados_def[1]}'
+                transicion=estados_def[1]
             else:
-                transicion=f'{estados_def[1]}'
+                transicion=estados_def[1]
             entero.append([estado,caracter,reconocido,transicion])
             reconocido+=lexema_reconocido[i]
             i+=1
             size+=1
         if i==len(lexema_reconocido):
-            entero.append([estado,"$",lexema_reconocido, transicion])
-
+            entero.append([estado,"$",lexema_reconocido, transicion+'(aceptación)'])
+        
         return entero
         # estados_aceptacion = [1]
         # reconocido: str = ''
@@ -63,43 +65,54 @@ class Rep_Estados:
         #             return False
 
 
-#ejemplo Santi
-        # indice = 0
-        # large = 0
-        # lexema_reade = ''
-        # estadoNumEntero = list()
-        # while indice < len(lexema):
-        #     if large == 0:
-        #         estado = f'{lista_estados[0]}'
-        #     else:
-        #         estado = f'{lista_estados[1]}'
-            
-        #     caracter = lexema[indice]
-            
-        #     if indice == 0:
-        #         transicion = f'{lista_estados[1]}'
-        #     else:
-        #         transicion = f'{lista_estados[1]}'
-                
-        #     estadoNumEntero.append([estado, caracter, lexema_reade, transicion])
-        #     lexema_reade += lexema[indice]
-        #     indice += 1
-        #     large +=1
-        
-        # if indice == len(lexema):
-        #     estadoNumEntero.append(
-        #         [estado, '#', lexema, f'{transicion} -> (aceptacion)'])
-
-        
-        # return estadoNumEntero
-
-
-
     def TE_Identificador(self,lexema_reconocido):
         pass
 
     def TE_DatoTipoDouble(self,lexema_reconocido):
-        pass
+        estados_def = ['S0', 'S1', 'S2', 'S3']
+        i = 0
+        size = 0
+        er = 'd+.dd*'
+        reconocido = ''
+        double = list()
+        while i < len(lexema_reconocido):
+            if size == 0 and lexema_reconocido[i].isdigit():
+                caracter = lexema_reconocido[i]
+                estado = estados_def[0]
+                transicion = estados_def[1]
+            elif size == 0 and lexema_reconocido[i] == '.':
+                caracter = lexema_reconocido[i]
+                estado = estados_def[0]
+                transicion = estados_def[2]
+            if size != 0 and transicion == 'S1' and lexema_reconocido[i].isdigit():
+                caracter = lexema_reconocido[i]
+                estado = estados_def[1]
+                transicion = estados_def[1]
+            elif size != 0 and transicion == 'S1' and lexema_reconocido[i] == '.':
+                caracter = lexema_reconocido[i]
+                estado = estados_def[1]
+                transicion = estados_def[2]
+            elif size != 0 and transicion == 'S2' and lexema_reconocido[i].isdigit():
+                caracter = lexema_reconocido[i]
+                estado = estados_def[2]
+                transicion = estados_def[3]
+            if size != 0 and transicion == 'S2' and lexema_reconocido[i].isdigit():
+                caracter = lexema_reconocido[i]
+                estado = estados_def[2]
+                transicion = estados_def[3]
+            elif size != 0 and transicion == 'S3' and lexema_reconocido[i].isdigit():
+                caracter = lexema_reconocido[i]
+                estado = estados_def[2]
+                transicion = estados_def[3]
+            double.append(
+                [estado, caracter, reconocido, transicion])
+            reconocido += lexema_reconocido[i]
+            i += 1
+            size += 1
+        if i == len(lexema_reconocido):
+            double.append(
+                [estado, '#', lexema_reconocido, transicion+'(aceptacion)'])
+        return double
 
 
     def TE_DatoTipoString(self,lexema_reconocido):

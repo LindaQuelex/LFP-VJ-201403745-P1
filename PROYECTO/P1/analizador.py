@@ -128,11 +128,13 @@ class Lexico2:
                             datos_token = Token1(fila,columna, lexema, token, expresion2['er'])
                             #enviar a método de estados
                             self.list_tokens.append(datos_token)
+                            # print('llega1')
                             # estados=Estados("estado","caracter","lexema","siguiente estado")                   
                             # estados3=patron(lexema) 
                             # print('este es el estado 3', estados3[1])                
                             # self.list_estados.append(estados3[1])
-
+                            enviar_estados=r_estados.reconocido_estados(token,lexema)
+                            self.list_estados.append(enviar_estados)
                             # enviar_estados=r_estados.reconocido_estados(token,lexema)
                             # self.list_estados.append(enviar_estados)
                             #columna += siguiente - posicion + 1
@@ -143,20 +145,18 @@ class Lexico2:
                             # print(expresion["er"])
                             datos_token = Token1(fila,columna, lexema, token, expresion2['er'])
                             #enviar a método de estados
+                       
                             self.list_tokens.append(datos_token)
+                            # print('llega3')
                             # estados=Estados("estado","caracter","lexema","siguiente estado")                   
                             # estados3=patron(lexema) 
                             # print('este es el estado 3', estados3[1])                
                             # self.list_estados.append(estados3[1])
                             #columna += siguiente - posicion + 1
 
-
-                            # enviar_estados=r_estados.reconocido_estados(token,lexema)
-                            # self.list_estados.append(enviar_estados)
-
-
-
-
+                            enviar_estados=r_estados.reconocido_estados(token,lexema)
+                            self.list_estados.append(enviar_estados)
+                    
 
                             posicion = siguiente - 1
 

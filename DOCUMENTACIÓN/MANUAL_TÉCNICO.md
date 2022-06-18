@@ -162,8 +162,7 @@ Con el ejemplo de lexemas se presenta un análisis léxico
 # Conversión de expresión regular a AFD a través del método del árbol 
 <ol>
 <li><p>Método del árbol</p></li>
-<li>
+
 <p>Detalle</p>
 <p><img src="ARBOLES_PROYECTO1_LFP.png" alt="diagramas" /></p>
-</li>
 </ol>

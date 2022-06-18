@@ -37,114 +37,22 @@
                             <tbody>
           <tr >
                                     <td>1</td>
-                                    <td>10</td>
-                                    <td>//35433et</td>
-                                    <td>tk_comentario_simple</td>
-                                    <td>//.*
-</td>
-                                </tr>      <tr >
-                                    <td>2</td>
                                     <td>3</td>
                                     <td>12</td>
                                     <td>tk_dato_tipo_Int</td>
                                     <td>[0-9][0-9]*</td>
                                 </tr>      <tr >
-                                    <td>3</td>
-                                    <td>5</td>
-                                    <td>56.7</td>
+                                    <td>2</td>
+                                    <td>4</td>
+                                    <td>7.5</td>
                                     <td>tk_dato_double</td>
                                     <td>[0-9][0-9]+.[0-9][0-9]*</td>
                                 </tr>      <tr >
                                     <td>4</td>
-                                    <td>4</td>
-                                    <td>pru</td>
-                                    <td>tk_identificador</td>
-                                    <td>'_|L(_|L|[0-9])*'</td>
-                                </tr>      <tr >
-                                    <td>5</td>
-                                    <td>4</td>
-                                    <td>eba</td>
-                                    <td>tk_identificador</td>
-                                    <td>'_|L(_|L|[0-9])*'</td>
-                                </tr>      <tr >
-                                    <td>6</td>
-                                    <td>1</td>
-                                    <td>/*9sfacoen
-qwe23"#"$"*/</td>
-                                    <td>tk_comentario_var_filas</td>
-                                    <td>\/\*.*\*\/</td>
-                                </tr>      <tr >
-                                    <td>7</td>
                                     <td>2</td>
-                                    <td>*</td>
-                                    <td>tk_multiplicacion</td>
-                                    <td>*</td>
-                                </tr>      <tr >
-                                    <td>8</td>
-                                    <td>2</td>
-                                    <td>-</td>
-                                    <td>tk_resta</td>
-                                    <td>-</td>
-                                </tr>      <tr >
-                                    <td>8</td>
-                                    <td>3</td>
-                                    <td>}</td>
-                                    <td>tk_llave_cerrada</td>
-                                    <td>}</td>
-                                </tr>      <tr >
                                     <td>9</td>
-                                    <td>2</td>
-                                    <td>/</td>
-                                    <td>tk_division</td>
-                                    <td>/</td>
-                                </tr>      <tr >
-                                    <td>10</td>
-                                    <td>2</td>
-                                    <td>+</td>
-                                    <td>tk_suma</td>
-                                    <td>+</td>
-                                </tr>      <tr >
-                                    <td>11</td>
-                                    <td>3</td>
-                                    <td><=</td>
-                                    <td>tk_menor_o_igual_que</td>
-                                    <td><=</td>
-                                </tr>      <tr >
-                                    <td>12</td>
-                                    <td>2</td>
-                                    <td>h</td>
-                                    <td>tk_identificador</td>
-                                    <td>'_|L(_|L|[0-9])*'</td>
-                                </tr>      <tr >
-                                    <td>13</td>
-                                    <td>2</td>
-                                    <td>o</td>
-                                    <td>tk_identificador</td>
-                                    <td>'_|L(_|L|[0-9])*'</td>
-                                </tr>      <tr >
-                                    <td>14</td>
-                                    <td>9</td>
-                                    <td>"oooooo"</td>
-                                    <td>tk_dato_string</td>
-                                    <td>".*"</td>
-                                </tr>      <tr >
-                                    <td>15</td>
-                                    <td>4</td>
-                                    <td>'#'</td>
-                                    <td>tk_dato_char</td>
-                                    <td>'.*{1}'</td>
-                                </tr>      <tr >
-                                    <td>16</td>
-                                    <td>4</td>
-                                    <td>'p'</td>
-                                    <td>tk_dato_char</td>
-                                    <td>'.*{1}'</td>
-                                </tr>      <tr >
-                                    <td>17</td>
-                                    <td>5</td>
-                                    <td>ttut</td>
-                                    <td>tk_identificador</td>
-                                    <td>'_|L(_|L|[0-9])*'</td>
+                                    <td>tk_dato_tipo_Int</td>
+                                    <td>[0-9][0-9]*</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -154,6 +62,182 @@ qwe23"#"$"*/</td>
 		</div>
 	</section>
     
+        <section class="ftco-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 text-center mb-5">
+                        <h2 class="heading-section">Reporte de Estados</h2>
+                    </div>
+                </div>
+        
+                <div class = "row" >
+                    <div class = "col-md-12" > 
+                        <div class = "table-wrap" >
+                            <table class = "table" >
+                                <thead class="thead-primary">
+                                <tr>
+                                    <th> Estado </th>
+                                    <th> Caracter </th>
+                                    <th> Lexema reconocido</th>
+                                    <th> Siguiente estado </th>
+                                </tr>
+                                </thead>
+            
+                                <tbody>
+               
+                                    <tr > 
+                                        <td> S0 </td>
+                                         
+                                        <td> 1 </td>
+                                         
+                                        <td>  </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> 2 </td>
+                                         
+                                        <td> 1 </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> $ </td>
+                                         
+                                        <td> 12 </td>
+                                         
+                                        <td> S1(aceptación) </td>
+                                                               
+            
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+                <div class = "row" >
+                    <div class = "col-md-12" > 
+                        <div class = "table-wrap" >
+                            <table class = "table" >
+                                <thead class="thead-primary">
+                                <tr>
+                                    <th> Estado </th>
+                                    <th> Caracter </th>
+                                    <th> Lexema reconocido</th>
+                                    <th> Siguiente estado </th>
+                                </tr>
+                                </thead>
+            
+                                <tbody>
+               
+                                    <tr > 
+                                        <td> S0 </td>
+                                         
+                                        <td> 7 </td>
+                                         
+                                        <td>  </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> . </td>
+                                         
+                                        <td> 7 </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> 5 </td>
+                                         
+                                        <td> 7. </td>
+                                         
+                                        <td> S3 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> # </td>
+                                         
+                                        <td> 7.5 </td>
+                                         
+                                        <td> S3(aceptacion) </td>
+                                                               
+            
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+                <div class = "row" >
+                    <div class = "col-md-12" > 
+                        <div class = "table-wrap" >
+                            <table class = "table" >
+                                <thead class="thead-primary">
+                                <tr>
+                                    <th> Estado </th>
+                                    <th> Caracter </th>
+                                    <th> Lexema reconocido</th>
+                                    <th> Siguiente estado </th>
+                                </tr>
+                                </thead>
+            
+                                <tbody>
+               
+                                    <tr > 
+                                        <td> S0 </td>
+                                         
+                                        <td> 9 </td>
+                                         
+                                        <td>  </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S0 </td>
+                                         
+                                        <td> $ </td>
+                                         
+                                        <td> 9 </td>
+                                         
+                                        <td> S1(aceptación) </td>
+                                                               
+            
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -177,45 +261,15 @@ qwe23"#"$"*/</td>
     
                             <tbody>
           <tr >
-                                    <td>4</td>
+                                    <td>3</td>
                                     <td>1</td>
-                                    <td>'</td>
+                                    <td>&</td>
 
                                 </tr>      <tr >
-                                    <td>5</td>
                                     <td>4</td>
-                                    <td>'</td>
-
-                                </tr>      <tr >
-                                    <td>9</td>
                                     <td>1</td>
                                     <td>
 </td>
-
-                                </tr>      <tr >
-                                    <td>11</td>
-                                    <td>3</td>
-                                    <td>?</td>
-
-                                </tr>      <tr >
-                                    <td>12</td>
-                                    <td>1</td>
-                                    <td>"</td>
-
-                                </tr>      <tr >
-                                    <td>13</td>
-                                    <td>2</td>
-                                    <td>"</td>
-
-                                </tr>      <tr >
-                                    <td>17</td>
-                                    <td>1</td>
-                                    <td>'</td>
-
-                                </tr>      <tr >
-                                    <td>17</td>
-                                    <td>5</td>
-                                    <td>'</td>
 
                                 </tr>
                             </tbody>

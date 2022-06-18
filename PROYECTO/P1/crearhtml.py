@@ -103,11 +103,11 @@ def createHTML(contenido):
                                     <th> Siguiente estado </th>
                                 </tr>
                                 </thead>
-        """
+            """
 
             body = body + f"""
                                 <tbody>
-        """
+            """
             
         #Contenido BODY HTML
 
