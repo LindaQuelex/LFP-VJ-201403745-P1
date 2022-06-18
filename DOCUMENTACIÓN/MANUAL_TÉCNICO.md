@@ -6,7 +6,39 @@
 * 201403745
 
 
-# Ejemplo de código fuente
+# Proyecto
+Analizador léxico de lenguaje Simple C
+
+# Palabras clave
+
+* Análisis léxico
+* Python
+* HTML
+* Tokens
+
+# Introducción
+El presente ensayo es sobre el proyecto 1 del 
+Laboratorio de Lenguajes Formales de Programación, de la Facultad de Ingeniería, de la 
+Universidad de San Carlos de Guatemala. 
+El proyecto fue nombrado como “Analizador Léxico del Lenguajes Simple C".
+
+Para la realización del proyecto se utilizó el lenguaje 
+de programación Python, el paradigma de 
+programación orientada a objetos. 
+
+La aplicación permite la carga de un archivo con extensión (.sc) el cual brinda el código fuente a analizar por la apliación, al ser enviadO el contenido del archivo, el analizador retorna reportes con los resultados, a través de HTML. 
+
+# Desarrollo
+
+Para el desarrollo del proyecto 1 se desarrolló e implementó lo siguiente: 
+
+
+1. Se definió una carpeta para los almacenar los archivos de entrada, denominado "ENTRADAS".
+
+2. Ejemplo de código fuente
+
+Se desarrolló un código fuente como prueba y para la definición de tokens. A continuación se presenta: 
+
 
 ```Simple C
 // comentario de una línea
@@ -25,9 +57,10 @@ Boolean _ = true;
 Boolean B= True;
 ```
 
-# Lexemas
+3. Lexemas
+   
+Con el código fuente de prueba se definireron los lexemas que acontinuación se listan:  
 
- A continuació se presenta un ejemplo de lexemas 
 
 - // comentario 1 línea sdri0werw023"#"#" 
 - /*línea 1 comentario
@@ -68,8 +101,9 @@ Boolean B= True;
 - return
 
 
-# Definición de tokens
-Tabla de tokens utilizado para Simple C
+4. Definición de tokens
+   
+Con los lexemas definidos de construyó la tabla de tokens, para Simple C
 
 | Token                   | Descripción                          | Patrón                 |
 | ----------------------- | ------------------------------------ | ---------------------- |
@@ -117,9 +151,9 @@ Tabla de tokens utilizado para Simple C
 
 
 
-# Análisis léxico
+5.  Análisis léxico
 
-Con el ejemplo de lexemas se presenta un análisis léxico
+Con el código fuente de prueba, los lexemas y la tabla de tokens definidos se presenta un ejemplo de análisis léxico:
 
 | Lexema                                                        | Token                 |
 | ------------------------------------------------------------- | --------------------- |
@@ -159,10 +193,62 @@ Con el ejemplo de lexemas se presenta un análisis léxico
 | (parametro,)*                                                 | parametro             |
 | return                                                        | reservada_return      |
 
-# Conversión de expresión regular a AFD a través del método del árbol 
+6.  Conversión de expresión regular a AFD a través del método del árbol 
+
+El siguiente proceso fue la definición de Automátas Finitos Deterministas (AFD) a través del método del árbol, que a continuación de presenta el detalle: 
+
 <ol>
 <li><p>Método del árbol</p></li>
 
 <p>Detalle</p>
 <p><img src="ARBOLES_PROYECTO1_LFP.png" alt="diagramas" /></p>
 </ol>
+
+7. Definición de Clases
+
+   * Clase AFD(): esta clase contiene la implementación de los autómatas finitos deterministas para los tokens de: (1) ComentarioSimple, (2)Comentario de Varias Líneas, (3)Datos tipo entero, (4) Datos tipo decimal, (5) Identificadores, (6) Datos tipo String y (7) Datos tipos Char. A continuación se presenta como ejemplo la implementación del AFD de Identificador:
+  
+   ```def AFD_Identificador(self,lexema):
+        estado=0 
+        estados_aceptacion = [1]
+        reconocido: str = ''
+        er= '_|L(_|L|d)*'
+        for caracter in lexema:
+            if estado==0:
+                if caracter in self.l :
+                    estado=1
+                    reconocido+=caracter
+                elif caracter in self.g_bajo:
+                    estado=1
+                    reconocido+=caracter
+                else:
+                    return False
+            elif estado==1:
+                if caracter in self.l:
+                    estado=1
+                    reconocido+=caracter
+                elif caracter in self.d:
+                    estado=1
+                    reconocido+=caracter
+                elif caracter in self.g_bajo:
+                    estado=1
+                    reconocido+=caracter
+                else:
+                    return False
+        return estado in estados_aceptacion
+    ```
+
+   * Clase Analizador(): esta clase requiere de la clase anterior para la implementación del análisis léxico, a través de un diccionario agruparon los tokens que requieren de AFD y los que no. Esta clase también permite almacenar las salidas en listas, las cuales serán enviadas a la clase "crearHTML". 
+  
+   * Clase crearhtml(): se encarga de la generación de reportes a traves de HTML, muestras reportes de Token, Estados y Errores. 
+
+   * Clase ExR(): permite completar la información de los reportes, por ejemplo las Expresiones Regulares (ER) definidas para cada AFD. 
+
+   * Clase app(): esta clase es como la clase main, donde requeire de la clase "analizador" para interactuar (mostrar y solicitar) al usuario a través de consola, como se muestra en la siguiente imagen: 
+
+       <p><img src="PASO1.png"/></p>
+  
+8. Diagrama de clases
+  
+    <img src="DIAGRAMA.png" alt="diagramas"/>
+  
