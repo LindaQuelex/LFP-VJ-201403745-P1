@@ -53,6 +53,69 @@
                                     <td>9</td>
                                     <td>tk_dato_tipo_Int</td>
                                     <td>[0-9][0-9]*</td>
+                                </tr>      <tr >
+                                    <td>5</td>
+                                    <td>2</td>
+                                    <td>+</td>
+                                    <td>tk_suma</td>
+                                    <td>+</td>
+                                </tr>      <tr >
+                                    <td>5</td>
+                                    <td>3</td>
+                                    <td>*</td>
+                                    <td>tk_multiplicacion</td>
+                                    <td>*</td>
+                                </tr>      <tr >
+                                    <td>6</td>
+                                    <td>2</td>
+                                    <td>*</td>
+                                    <td>tk_multiplicacion</td>
+                                    <td>*</td>
+                                </tr>      <tr >
+                                    <td>7</td>
+                                    <td>7</td>
+                                    <td>_ident</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|[0-9])*'</td>
+                                </tr>      <tr >
+                                    <td>8</td>
+                                    <td>13</td>
+                                    <td>//comentario</td>
+                                    <td>tk_comentario_simple</td>
+                                    <td>//.*
+</td>
+                                </tr>      <tr >
+                                    <td>9</td>
+                                    <td>1</td>
+                                    <td>/*comentario
+multi
+línea*/</td>
+                                    <td>tk_comentario_var_filas</td>
+                                    <td>\/\*.*\*\/</td>
+                                </tr>      <tr >
+                                    <td>10</td>
+                                    <td>9</td>
+                                    <td>"string"</td>
+                                    <td>tk_dato_string</td>
+                                    <td>".*"</td>
+                                </tr>      <tr >
+                                    <td>11</td>
+                                    <td>2</td>
+                                    <td>f</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|[0-9])*'</td>
+                                </tr>      <tr >
+                                    <td>12</td>
+                                    <td>4</td>
+                                    <td>'q'</td>
+                                    <td>tk_dato_char</td>
+                                    <td>'.*{1}'</td>
+                                </tr>      <tr >
+                                    <td>13</td>
+                                    <td>6</td>
+                                    <td>fsfag</td>
+                                    <td>tk_identificador</td>
+                                    <td>'_|L(_|L|[0-9])*'</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -238,6 +301,939 @@
                 </div>
             </section>
             
+                <div class = "row" >
+                    <div class = "col-md-12" > 
+                        <div class = "table-wrap" >
+                            <table class = "table" >
+                                <thead class="thead-primary">
+                                <tr>
+                                    <th> Estado </th>
+                                    <th> Caracter </th>
+                                    <th> Lexema reconocido</th>
+                                    <th> Siguiente estado </th>
+                                </tr>
+                                </thead>
+            
+                                <tbody>
+               
+                                    <tr > 
+                                        <td> S0 </td>
+                                         
+                                        <td> _ </td>
+                                         
+                                        <td>  </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> i </td>
+                                         
+                                        <td> _ </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> d </td>
+                                         
+                                        <td> _i </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> e </td>
+                                         
+                                        <td> _id </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> n </td>
+                                         
+                                        <td> _ide </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> t </td>
+                                         
+                                        <td> _iden </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> # </td>
+                                         
+                                        <td> _ident </td>
+                                         
+                                        <td> S1(aceptacion) </td>
+                                                               
+            
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+                <div class = "row" >
+                    <div class = "col-md-12" > 
+                        <div class = "table-wrap" >
+                            <table class = "table" >
+                                <thead class="thead-primary">
+                                <tr>
+                                    <th> Estado </th>
+                                    <th> Caracter </th>
+                                    <th> Lexema reconocido</th>
+                                    <th> Siguiente estado </th>
+                                </tr>
+                                </thead>
+            
+                                <tbody>
+               
+                                    <tr > 
+                                        <td> S0 </td>
+                                         
+                                        <td> / </td>
+                                         
+                                        <td>  </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> / </td>
+                                         
+                                        <td> / </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> c </td>
+                                         
+                                        <td> // </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> o </td>
+                                         
+                                        <td> //c </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> m </td>
+                                         
+                                        <td> //co </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> e </td>
+                                         
+                                        <td> //com </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> n </td>
+                                         
+                                        <td> //come </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> t </td>
+                                         
+                                        <td> //comen </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> a </td>
+                                         
+                                        <td> //coment </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> r </td>
+                                         
+                                        <td> //comenta </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> i </td>
+                                         
+                                        <td> //comentar </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> o </td>
+                                         
+                                        <td> //comentari </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> # </td>
+                                         
+                                        <td> //comentario </td>
+                                         
+                                        <td> S2(aceptacion) </td>
+                                                               
+            
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+                <div class = "row" >
+                    <div class = "col-md-12" > 
+                        <div class = "table-wrap" >
+                            <table class = "table" >
+                                <thead class="thead-primary">
+                                <tr>
+                                    <th> Estado </th>
+                                    <th> Caracter </th>
+                                    <th> Lexema reconocido</th>
+                                    <th> Siguiente estado </th>
+                                </tr>
+                                </thead>
+            
+                                <tbody>
+               
+                                    <tr > 
+                                        <td> S0 </td>
+                                         
+                                        <td> / </td>
+                                         
+                                        <td>  </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> * </td>
+                                         
+                                        <td> / </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> c </td>
+                                         
+                                        <td> /* </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> o </td>
+                                         
+                                        <td> /*c </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> m </td>
+                                         
+                                        <td> /*co </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> e </td>
+                                         
+                                        <td> /*com </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> n </td>
+                                         
+                                        <td> /*come </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> t </td>
+                                         
+                                        <td> /*comen </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> a </td>
+                                         
+                                        <td> /*coment </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> r </td>
+                                         
+                                        <td> /*comenta </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> i </td>
+                                         
+                                        <td> /*comentar </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> o </td>
+                                         
+                                        <td> /*comentari </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> 
+ </td>
+                                         
+                                        <td> /*comentario </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> m </td>
+                                         
+                                        <td> /*comentario
+ </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> u </td>
+                                         
+                                        <td> /*comentario
+m </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> l </td>
+                                         
+                                        <td> /*comentario
+mu </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> t </td>
+                                         
+                                        <td> /*comentario
+mul </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> i </td>
+                                         
+                                        <td> /*comentario
+mult </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> 
+ </td>
+                                         
+                                        <td> /*comentario
+multi </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> l </td>
+                                         
+                                        <td> /*comentario
+multi
+ </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> í </td>
+                                         
+                                        <td> /*comentario
+multi
+l </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> n </td>
+                                         
+                                        <td> /*comentario
+multi
+lí </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> e </td>
+                                         
+                                        <td> /*comentario
+multi
+lín </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> a </td>
+                                         
+                                        <td> /*comentario
+multi
+líne </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> * </td>
+                                         
+                                        <td> /*comentario
+multi
+línea </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S2 </td>
+                                         
+                                        <td> / </td>
+                                         
+                                        <td> /*comentario
+multi
+línea* </td>
+                                         
+                                        <td> S3 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S3 </td>
+                                         
+                                        <td> # </td>
+                                         
+                                        <td> /*comentario
+multi
+línea*/ </td>
+                                         
+                                        <td> S4(aceptacion) </td>
+                                                               
+            
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+                <div class = "row" >
+                    <div class = "col-md-12" > 
+                        <div class = "table-wrap" >
+                            <table class = "table" >
+                                <thead class="thead-primary">
+                                <tr>
+                                    <th> Estado </th>
+                                    <th> Caracter </th>
+                                    <th> Lexema reconocido</th>
+                                    <th> Siguiente estado </th>
+                                </tr>
+                                </thead>
+            
+                                <tbody>
+               
+                                    <tr > 
+                                        <td> S0 </td>
+                                         
+                                        <td> " </td>
+                                         
+                                        <td>  </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> s </td>
+                                         
+                                        <td> " </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> t </td>
+                                         
+                                        <td> "s </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> r </td>
+                                         
+                                        <td> "st </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> i </td>
+                                         
+                                        <td> "str </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> n </td>
+                                         
+                                        <td> "stri </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> g </td>
+                                         
+                                        <td> "strin </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> " </td>
+                                         
+                                        <td> "string </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> # </td>
+                                         
+                                        <td> "string" </td>
+                                         
+                                        <td> S2(aceptacion) </td>
+                                                               
+            
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+                <div class = "row" >
+                    <div class = "col-md-12" > 
+                        <div class = "table-wrap" >
+                            <table class = "table" >
+                                <thead class="thead-primary">
+                                <tr>
+                                    <th> Estado </th>
+                                    <th> Caracter </th>
+                                    <th> Lexema reconocido</th>
+                                    <th> Siguiente estado </th>
+                                </tr>
+                                </thead>
+            
+                                <tbody>
+               
+                                    <tr > 
+                                        <td> S0 </td>
+                                         
+                                        <td> f </td>
+                                         
+                                        <td>  </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S0 </td>
+                                         
+                                        <td> # </td>
+                                         
+                                        <td> f </td>
+                                         
+                                        <td> S1(aceptacion) </td>
+                                                               
+            
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+                <div class = "row" >
+                    <div class = "col-md-12" > 
+                        <div class = "table-wrap" >
+                            <table class = "table" >
+                                <thead class="thead-primary">
+                                <tr>
+                                    <th> Estado </th>
+                                    <th> Caracter </th>
+                                    <th> Lexema reconocido</th>
+                                    <th> Siguiente estado </th>
+                                </tr>
+                                </thead>
+            
+                                <tbody>
+               
+                                    <tr > 
+                                        <td> S0 </td>
+                                         
+                                        <td> ' </td>
+                                         
+                                        <td>  </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> q </td>
+                                         
+                                        <td> ' </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> ' </td>
+                                         
+                                        <td> 'q </td>
+                                         
+                                        <td> S2 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> # </td>
+                                         
+                                        <td> 'q' </td>
+                                         
+                                        <td> S2(aceptacion) </td>
+                                                               
+            
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+                <div class = "row" >
+                    <div class = "col-md-12" > 
+                        <div class = "table-wrap" >
+                            <table class = "table" >
+                                <thead class="thead-primary">
+                                <tr>
+                                    <th> Estado </th>
+                                    <th> Caracter </th>
+                                    <th> Lexema reconocido</th>
+                                    <th> Siguiente estado </th>
+                                </tr>
+                                </thead>
+            
+                                <tbody>
+               
+                                    <tr > 
+                                        <td> S0 </td>
+                                         
+                                        <td> f </td>
+                                         
+                                        <td>  </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> s </td>
+                                         
+                                        <td> f </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> f </td>
+                                         
+                                        <td> fs </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> a </td>
+                                         
+                                        <td> fsf </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> g </td>
+                                         
+                                        <td> fsfa </td>
+                                         
+                                        <td> S1 </td>
+                                                               
+            
+                                    </tr>   
+                                    <tr > 
+                                        <td> S1 </td>
+                                         
+                                        <td> # </td>
+                                         
+                                        <td> fsfag </td>
+                                         
+                                        <td> S1(aceptacion) </td>
+                                                               
+            
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
 	<section class="ftco-section">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -264,6 +1260,33 @@
                                     <td>3</td>
                                     <td>1</td>
                                     <td>&</td>
+
+                                </tr>      <tr >
+                                    <td>8</td>
+                                    <td>1</td>
+                                    <td>
+</td>
+
+                                </tr>      <tr >
+                                    <td>10</td>
+                                    <td>1</td>
+                                    <td>
+</td>
+
+                                </tr>      <tr >
+                                    <td>11</td>
+                                    <td>1</td>
+                                    <td>"</td>
+
+                                </tr>      <tr >
+                                    <td>13</td>
+                                    <td>1</td>
+                                    <td>'</td>
+
+                                </tr>      <tr >
+                                    <td>13</td>
+                                    <td>6</td>
+                                    <td>'</td>
 
                                 </tr>
                             </tbody>

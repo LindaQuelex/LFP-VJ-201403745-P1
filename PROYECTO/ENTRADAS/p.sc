@@ -10,3 +10,8 @@ _ident
 /*comentario
 multi
 línea*/
+
+"string"
+"f
+'q'
+'fsfag'

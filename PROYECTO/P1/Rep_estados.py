@@ -1,28 +1,6 @@
-
 from estados import *
 
-
 class Rep_Estados:
-
-    def reconocido_estados(self, tipo, lexema_reconocido):
-        if tipo=='tk_dato_tipo_Int':
-            tablaint=self.TE_DatoTipoInt(lexema_reconocido)
-            c=Estados(tipo, lexema_reconocido,tablaint)
-        elif tipo=='tk_dato_double':
-            tabladouble=self.TE_DatoTipoDouble(lexema_reconocido)
-            c=Estados(tipo, lexema_reconocido,tabladouble)
-        elif tipo=='tk_identificador':
-            tablaidentificador=self.TE_Identificador(lexema_reconocido)
-            c=Estados(tipo, lexema_reconocido,tablaidentificador)
-        elif tipo=='tk_comentario_simple':
-            tablacomentariosimple=self.TE_ComentarioSimple(lexema_reconocido)
-            c=Estados(tipo, lexema_reconocido,tablacomentariosimple)
-        elif tipo=='tk_comentario_var_filas':
-            tablacomentariosVL=self.TE_ComentarioVariasLíneas(lexema_reconocido)
-            c=Estados(tipo, lexema_reconocido,tablacomentariosVL)
-           
-           
-        return c
 
     def TE_ComentarioSimple(self,lexema_reconocido):
         estados_def = ['S0', 'S1', 'S2']
@@ -202,8 +180,105 @@ class Rep_Estados:
 
 
     def TE_DatoTipoString(self,lexema_reconocido):
-        pass
+        estados_def = ['S0', 'S1', 'S2']
+        i = 0
+        size = 0
+        reconocido = ''
+        DatoTipoString = list()
+        while i < len(lexema_reconocido):
+            if size == 0 and lexema_reconocido[i] == '"':
+                caracter = lexema_reconocido[i]
+                estado = estados_def[0]
+                transicion = estados_def[1]
+                DatoTipoString.append(
+                    [estado, caracter, reconocido, transicion])
+                reconocido += lexema_reconocido[i]
+                i += 1
+                size += 1
+            elif size != 0 and lexema_reconocido[i] != '"':
+                caracter = lexema_reconocido[i]
+                estado = estados_def[1]
+                transicion = estados_def[1]
+                DatoTipoString.append(
+                    [estado, caracter, reconocido, transicion])
+                reconocido += lexema_reconocido[i]
+                i += 1
+                size += 1
+            elif size != 0 and lexema_reconocido[i] == '"':
+                caracter = lexema_reconocido[i]
+                estado = estados_def[1]
+                transicion = estados_def[2]
+                DatoTipoString.append(
+                    [estado, caracter, reconocido, transicion])
+                reconocido += lexema_reconocido[i]
+                i += 1
+                size += 1
+        if i == len(lexema_reconocido):
+            DatoTipoString.append(
+                [estado, '#', lexema_reconocido,transicion+'(aceptacion)'])
+        return DatoTipoString
 
     def TE_DatoTipoChar(self,lexema_reconocido):
-        pass
+        estados_def = ['S0', 'S1', 'S2']
+        i = 0
+        size = 0
+        reconocido = ''
+        estado = ''
+        Char = list()
+        while i < len(lexema_reconocido):
+            if size == 0 and lexema_reconocido[i] == "'":
+                caracter = lexema_reconocido[i]
+                estado = estados_def[0]
+                transicion = estados_def[1]
+                Char.append(
+                    [estado, caracter, reconocido, transicion])
+                reconocido += lexema_reconocido[i]
+                i += 1
+                size += 1
+            elif size != 0 and lexema_reconocido[i] != "'":
+                caracter = lexema_reconocido[i]
+                estado = estados_def[1]
+                transicion = estados_def[1]
+                Char.append(
+                    [estado, caracter, reconocido, transicion])
+                reconocido += lexema_reconocido[i]
+                i += 1
+                size += 1
+            elif size != 0 and lexema_reconocido[i] == "'":
+                caracter = lexema_reconocido[i]
+                estado = estados_def[1]
+                transicion = estados_def[2]
+                Char.append(
+                    [estado, caracter, reconocido, transicion])
+                reconocido += lexema_reconocido[i]
+                i += 1
+                size += 1
 
+        if i == len(lexema_reconocido):
+            Char.append(
+                [estado, '#', lexema_reconocido, transicion+'(aceptacion)'])
+        return Char
+
+    def reconocido_estados(self, tipo, lexema_reconocido):
+        if tipo=='tk_dato_tipo_Int':
+            tablaint=self.TE_DatoTipoInt(lexema_reconocido)
+            c=Estados(tipo, lexema_reconocido,tablaint)
+        elif tipo=='tk_dato_double':
+            tabladouble=self.TE_DatoTipoDouble(lexema_reconocido)
+            c=Estados(tipo, lexema_reconocido,tabladouble)
+        elif tipo=='tk_identificador':
+            tablaidentificador=self.TE_Identificador(lexema_reconocido)
+            c=Estados(tipo, lexema_reconocido,tablaidentificador)
+        elif tipo=='tk_comentario_simple':
+            tablacomentariosimple=self.TE_ComentarioSimple(lexema_reconocido)
+            c=Estados(tipo, lexema_reconocido,tablacomentariosimple)
+        elif tipo=='tk_comentario_var_filas':
+            tablacomentariosVL=self.TE_ComentarioVariasLíneas(lexema_reconocido)
+            c=Estados(tipo, lexema_reconocido,tablacomentariosVL)
+        elif tipo=='tk_dato_string':
+            tablastrings=self.TE_DatoTipoString(lexema_reconocido)
+            c=Estados(tipo, lexema_reconocido,tablastrings)
+        elif tipo=='tk_dato_char':
+            tablachar=self.TE_DatoTipoChar(lexema_reconocido)
+            c=Estados(tipo, lexema_reconocido,tablachar)
+        return c
